@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fais ton choix</title>
+<title>ALIZARINE</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,43 +15,11 @@ body{
     background:black;
     height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:60px;
-    font-family:Arial;
-    overflow:hidden;
-}
-
-/* scanlines globales */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events:none;
-}
-
-/* titre */
-.title{
-    color:#ff0000;
-    letter-spacing:6px;
-    font-size:2rem;
-    animation:flicker 2s infinite;
-}
-
-/* container */
-.choices{
-    display:flex;
     gap:120px;
     flex-wrap:wrap;
-    justify-content:center;
+    overflow:hidden;
 }
 
 /* base logos */
@@ -61,7 +29,7 @@ body::before{
     transition:0.3s;
 }
 
-/* ALIZARINE hover (glitch rouge/cyan) */
+/* ALIZARINE = simple hover glitch */
 .aliza:hover{
     animation:glitch 0.15s infinite;
     filter:
@@ -71,7 +39,7 @@ body::before{
     transform:scale(1.05);
 }
 
-/* FEST hover (pulse violent) */
+/* FEST = pulse (celui que tu aimes) */
 .fest:hover{
     animation:pulse 0.8s infinite;
     filter:
@@ -89,23 +57,11 @@ body::before{
     100%{transform:translate(0);}
 }
 
-/* pulse */
+/* pulse FEST */
 @keyframes pulse{
     0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
+    50%{transform:scale(1.12);}
     100%{transform:scale(1);}
-}
-
-/* flicker global */
-@keyframes flicker{
-    0%{opacity:1;}
-    10%{opacity:0.4;}
-    20%{opacity:1;}
-    30%{opacity:0.6;}
-    40%{opacity:1;}
-    60%{opacity:0.3;}
-    80%{opacity:1;}
-    100%{opacity:0.7;}
 }
 </style>
 
@@ -113,21 +69,15 @@ body::before{
 
 <body>
 
-<div class="title">Fais ton choix</div>
+<!-- ALIZARINE -->
+<a href="home.html">
+    <img src="logo.png" class="logo aliza">
+</a>
 
-<div class="choices">
-
-    <!-- ALIZARINE -->
-    <a href="home.html">
-        <img src="logo.png" class="logo aliza">
-    </a>
-
-    <!-- FEST -->
-    <a href="fest.html">
-        <img src="logo-fest.png" class="logo fest">
-    </a>
-
-</div>
+<!-- FEST -->
+<a href="fest.html">
+    <img src="fest.png" class="logo fest">
+</a>
 
 </body>
 </html>
