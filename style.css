@@ -102,6 +102,11 @@ nav a:hover{
     background:rgba(0,0,0,0.7);
     padding:30px;
     box-shadow:0 0 20px rgba(255,0,0,0.3);
+    max-width:900px;
+    width:90%;
+    margin:auto;
+
+    overflow:hidden;
 }
 
 h2{
@@ -208,15 +213,29 @@ header.scrolled .main-logo{
 }
 /* Pour téléphone */
 @media (max-width: 768px){
- .poster{
+.concert{
+    width:100%;
+        }
+.poster{
         position:static;
-        display:block;
-        margin-top:10px;
+
         width:100%;
+        max-width:300px;
+
+        margin-top:10px;
+
+        opacity:0;
+        visibility:hidden;
+        display:none;
+
         transform:none;
-        opacity:1;
     }
 
+    .concert.active .poster{
+        display:block;
+        opacity:1;
+        visibility:visible;
+    }
     h1{
         font-size:2.8rem;
         text-align:center;
