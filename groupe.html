@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-<script>
-window.addEventListener("scroll", function(){
-    const header = document.querySelector("header");
 
-    if(window.scrollY > 50){
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
-</script>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ALIZARINE</title>
+<title>ALIZARINE - GROUPE</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
+<header id="header">
+
     <img src="logo.png" class="main-logo" alt="ALIZARINE">
+
     <p class="subtitle">ROCK • PUNK • ALTERNATIF</p>
+
 </header>
 
 <nav>
-    <a href="index.html">Accueil</a>
+    <a href="index.html">Concert</a>
     <a href="#">Musique</a>
     <a href="#">Contact</a>
     <a href="fest.html">ALIZA'FEST</a>
@@ -43,12 +37,25 @@ window.addEventListener("scroll", function(){
 <h2>ALIZARINE</h2>
 
 <p>
-On n'est pas la pour vous parler des fleurs de nos champs...
+On n'est pas là pour vous parler des fleurs de nos champs...
 </p>
 
 </div>
 
 </section>
+
+<!-- SCRIPT SCROLL PROPRE -->
+<script>
+window.addEventListener("scroll", function(){
+    const header = document.getElementById("header");
+
+    if(window.scrollY > 50){
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+</script>
 
 </body>
 </html>
