@@ -119,12 +119,53 @@ h2{
     max-width:90%;
 
     filter:
-    drop-shadow(0 0 10px #39ff14)
-    drop-shadow(0 0 20px #39ff14);
+    drop-shadow(0 0 5px #ff0000)
+    drop-shadow(0 0 10px #ff0000)
+    drop-shadow(0 0 20px #ff0000);
 
-    transition:0.4s;
+    transition:0.2s;
+
+    position:relative;
 }
 
+/* HOVER GLITCH */
+
 .logo:hover{
-    transform:scale(1.03);
+
+    animation:glitch 0.2s infinite;
+
+    filter:
+    drop-shadow(3px 0 #ff0000)
+    drop-shadow(-3px 0 #00ffff)
+    drop-shadow(0 0 20px #ff0000);
+
+}
+
+/* GLITCH ANIMATION */
+
+@keyframes glitch{
+
+    0%{
+        transform:translate(0);
+    }
+
+    20%{
+        transform:translate(-2px, 2px);
+    }
+
+    40%{
+        transform:translate(-2px, -2px);
+    }
+
+    60%{
+        transform:translate(2px, 2px);
+    }
+
+    80%{
+        transform:translate(2px, -2px);
+    }
+
+    100%{
+        transform:translate(0);
+    }
 }
