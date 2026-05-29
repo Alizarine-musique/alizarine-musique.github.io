@@ -254,22 +254,4 @@ header.scrolled .main-logo{
     .main-logo{
         width:180px;
     }
-    
-    <script>
-if(window.innerWidth <= 768){
-
-    const concerts = document.querySelectorAll(".concert");
-
-    concerts.forEach(concert => {
-
-        concert.addEventListener("click", () => {
-
-            concert.classList.toggle("active");
-
-        });
-
-    });
-
-}
-</script>
 }
