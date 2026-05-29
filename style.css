@@ -8,14 +8,15 @@ body{
     overflow-x:hidden;
 }
 .main-logo{
-    width:500px;
-    max-width:90%;
+    width:260px;
+    max-width:70%;
     display:block;
     margin:40px auto;
 
     filter:
-    drop-shadow(0 0 10px #ff0000)
-    drop-shadow(0 0 25px #ff0000);
+    drop-shadow(0 0 8px #ff0000)
+    drop-shadow(0 0 18px #ff0000);
+    transition:0.3s;
 }
 /* BACKGROUND */
 
@@ -158,6 +159,6 @@ h2{
         justify-content:center;
     }
     .main-logo{
-        width:280px;
+        width:180px;
     }
 }
