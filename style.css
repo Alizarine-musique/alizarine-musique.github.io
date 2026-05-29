@@ -1,0 +1,211 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
+
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
+    url("background.png");
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-2;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    padding:25px 20px;
+}
+
+.main-logo{
+    width:260px;
+    height:auto;
+
+    filter:
+    drop-shadow(0 0 8px #ff0000)
+    drop-shadow(0 0 18px #ff0000);
+
+    transition:0.3s;
+}
+
+.subtitle{
+    font-family:'Rock Salt', cursive;
+    color:#ff0000;
+    font-size:0.9rem;
+    line-height:1.5;
+    margin:0;
+}
+
+/* HEADER DISPARAIT */
+
+header.scrolled{
+    opacity:0;
+    transform:translateY(-30px);
+    transition:0.4s;
+}
+
+/* NAV */
+
+nav{
+    padding:0 20px 30px;
+}
+
+nav a{
+    color:#ff0000;
+    text-decoration:none;
+    margin-right:20px;
+    font-size:1rem;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px #ff0000;
+}
+
+/* BOX */
+
+.box{
+    border:2px solid #ff0000;
+    background:rgba(0,0,0,0.7);
+
+    padding:30px;
+
+    width:90%;
+    max-width:900px;
+
+    margin:20px auto;
+
+    box-shadow:0 0 20px rgba(255,0,0,0.3);
+}
+
+h2{
+    color:#ff0000;
+    margin-top:0;
+}
+
+/* CONCERTS */
+
+.concert{
+    position:relative;
+    margin-bottom:16px;
+    cursor:pointer;
+
+    width:fit-content;
+    max-width:100%;
+}
+
+.concert span{
+    display:inline-block;
+    max-width:100%;
+    line-height:1.5;
+}
+
+/* FUTUR / PASSÉ */
+
+.upcoming{
+    color:#ff0000;
+}
+
+.past{
+    color:rgba(255,255,255,0.35);
+    text-decoration:line-through;
+}
+
+/* AFFICHE */
+
+.poster{
+    position:absolute;
+
+    left:105%;
+    top:0;
+
+    width:220px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+
+    border:2px solid #ff0000;
+
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+
+    z-index:999;
+}
+
+/* PC = hover */
+
+.concert:hover .poster{
+    opacity:1;
+    visibility:visible;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    body::before{
+        background-position:center top;
+        background-size:cover;
+    }
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .main-logo{
+        width:180px;
+    }
+
+    .subtitle{
+        font-size:0.8rem;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .concert{
+        width:100%;
+    }
+
+    .poster{
+        position:static;
+
+        display:none;
+
+        width:100%;
+        max-width:280px;
+
+        margin-top:10px;
+
+        opacity:1;
+        visibility:visible;
+    }
+
+    .concert.active .poster{
+        display:block;
+    }
+}
+```
