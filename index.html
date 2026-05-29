@@ -7,8 +7,6 @@
 
 <title>ALIZARINE</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
 body{
     margin:0;
@@ -19,49 +17,44 @@ body{
     align-items:center;
     gap:120px;
     flex-wrap:wrap;
-    overflow:hidden;
+    font-family:Arial, sans-serif;
 }
 
-/* base logos */
+/* logos */
 .logo{
     width:220px;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.2s;
+    filter:grayscale(100%) contrast(150%);
 }
 
-/* ALIZARINE = simple hover glitch */
+/* ALIZARINE = agressif simple */
 .aliza:hover{
-    animation:glitch 0.15s infinite;
-    filter:
-    drop-shadow(3px 0 #ff0000)
-    drop-shadow(-3px 0 #00ffff)
-    drop-shadow(0 0 20px #ff0000);
-    transform:scale(1.05);
+    transform:scale(1.05) rotate(-2deg);
+    filter:contrast(200%) brightness(1.2);
 }
 
-/* FEST = pulse (celui que tu aimes) */
+/* FEST = énergie punk */
 .fest:hover{
-    animation:pulse 0.8s infinite;
-    filter:
-    drop-shadow(0 0 20px #ff0000);
-    transform:scale(1.08);
+    transform:scale(1.1) rotate(2deg);
+    filter:contrast(200%) brightness(1.4);
 }
 
-/* glitch */
-@keyframes glitch{
-    0%{transform:translate(0);}
-    20%{transform:translate(-2px,2px);}
-    40%{transform:translate(2px,-2px);}
-    60%{transform:translate(-2px,-2px);}
-    80%{transform:translate(2px,2px);}
-    100%{transform:translate(0);}
-}
-
-/* pulse FEST */
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.12);}
-    100%{transform:scale(1);}
+/* effet “photocopie sale” */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px,
+        transparent 3px
+    );
+    pointer-events:none;
+    mix-blend-mode:overlay;
 }
 </style>
 
@@ -69,14 +62,12 @@ body{
 
 <body>
 
-<!-- ALIZARINE -->
 <a href="home.html">
     <img src="logo.png" class="logo aliza">
 </a>
 
-<!-- FEST -->
 <a href="fest.html">
-    <img src="fest.png" class="logo fest">
+    <img src="logo-fest.png" class="logo fest">
 </a>
 
 </body>
