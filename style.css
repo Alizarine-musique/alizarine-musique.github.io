@@ -196,6 +196,7 @@ header.scrolled .main-logo{
 /* apparition au hover */
 .concert:hover .poster{
     opacity:1;
+    transform:translateY(-50%) scale(1);
 }
 .upcoming{
     color:#ff0000;
