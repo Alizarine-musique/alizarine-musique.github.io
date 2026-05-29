@@ -61,8 +61,9 @@ header{
 /* LOGO */
 
 .main-logo{
-    width:260px;
-    max-width:85vw;
+   justify-self:start;
+    width:300px;
+    max-width:80%;
     height:auto;
 
     filter:
@@ -75,16 +76,13 @@ header{
 /* TEXTE */
 
 .subtitle{
-    font-family:'Rock Salt', cursive;
-
-    color:#ff0000;
-
-    font-size:0.85rem;
-    line-height:1.6;
-
-    margin:0;
-
-    text-align:center;
+   justify-self:center;
+   font-family:'Rock Salt', cursive;
+   color:#ff0000;
+   font-size:0.85rem;
+   line-height:1.6;
+   margin:0;
+   text-align:center;
 }
 
 /* disparition scroll */
