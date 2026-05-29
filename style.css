@@ -83,7 +83,7 @@ h1{
     letter-spacing:2px;
     margin:0;
     font-size:0.9rem;
-    white-space:nowrap;
+    white-space:normal;
 }
 
 nav a{
