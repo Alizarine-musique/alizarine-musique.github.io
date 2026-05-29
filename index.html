@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALIZARINE</title>
+
+<title>Fais ton choix</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,12 +13,99 @@
 body{
     margin:0;
     background:black;
+    height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    gap:100px;
+    gap:60px;
+    font-family:Arial;
+    overflow:hidden;
+}
+
+/* scanlines globales */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none;
+}
+
+/* titre */
+.title{
+    color:#ff0000;
+    letter-spacing:6px;
+    font-size:2rem;
+    animation:flicker 2s infinite;
+}
+
+/* container */
+.choices{
+    display:flex;
+    gap:120px;
     flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* base logos */
+.logo{
+    width:220px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* ALIZARINE hover (glitch rouge/cyan) */
+.aliza:hover{
+    animation:glitch 0.15s infinite;
+    filter:
+    drop-shadow(3px 0 #ff0000)
+    drop-shadow(-3px 0 #00ffff)
+    drop-shadow(0 0 20px #ff0000);
+    transform:scale(1.05);
+}
+
+/* FEST hover (pulse violent) */
+.fest:hover{
+    animation:pulse 0.8s infinite;
+    filter:
+    drop-shadow(0 0 20px #ff0000);
+    transform:scale(1.08);
+}
+
+/* glitch */
+@keyframes glitch{
+    0%{transform:translate(0);}
+    20%{transform:translate(-2px,2px);}
+    40%{transform:translate(2px,-2px);}
+    60%{transform:translate(-2px,-2px);}
+    80%{transform:translate(2px,2px);}
+    100%{transform:translate(0);}
+}
+
+/* pulse */
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+/* flicker global */
+@keyframes flicker{
+    0%{opacity:1;}
+    10%{opacity:0.4;}
+    20%{opacity:1;}
+    30%{opacity:0.6;}
+    40%{opacity:1;}
+    60%{opacity:0.3;}
+    80%{opacity:1;}
+    100%{opacity:0.7;}
 }
 </style>
 
@@ -25,15 +113,21 @@ body{
 
 <body>
 
-<!-- LOGO ALIZARINE -->
-<a href="home.html">
-    <img src="logo.png" class="logo">
-</a>
+<div class="title">Fais ton choix</div>
 
-<!-- LOGO FEST -->
-<a href="fest.html">
-    <img src="logo-fest.png" class="logo">
-</a>
+<div class="choices">
+
+    <!-- ALIZARINE -->
+    <a href="home.html">
+        <img src="logo.png" class="logo aliza">
+    </a>
+
+    <!-- FEST -->
+    <a href="fest.html">
+        <img src="fest.png" class="logo fest">
+    </a>
+
+</div>
 
 </body>
 </html>
