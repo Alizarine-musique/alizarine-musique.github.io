@@ -41,36 +41,28 @@ body::before{
 /* =========================
    HEADER
 ========================= */
-
 header{
     display:flex;
-    flex-direction:column;
-
+    flex-direction:row;
     align-items:center;
-    justify-content:center;
-
+    justify-content:space-between;
     gap:10px;
-
     padding:20px 20px 10px;
-
     text-align:center;
-
     transition:0.4s;
-}
-
+      }
 /* LOGO */
-
 .main-logo{
    justify-self:start;
-    width:300px;
-    max-width:80%;
-    height:auto;
-
-    filter:
-    drop-shadow(0 0 8px #ff0000)
-    drop-shadow(0 0 18px #ff0000);
-
-    transition:0.3s;
+   width:300px;
+   max-width:80%;
+   height:auto;
+   margin:0;
+   display:block;
+   filter:
+   drop-shadow(0 0 8px #ff0000)
+   drop-shadow(0 0 18px #ff0000);
+   transition:0.3s;
 }
 
 /* TEXTE */
