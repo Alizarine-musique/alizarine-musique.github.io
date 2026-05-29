@@ -8,6 +8,7 @@
 <title>Les Projets</title>
 
 <style>
+
 body{
     margin:0;
     background:black;
@@ -19,17 +20,26 @@ body{
     flex-wrap:wrap;
 }
 
-/* LOGOS PLUS GROS */
-.logo.aliza{
+/* TEXTE HAUT */
+.title{
+    position:absolute;
+    top:40px;
+    color:white;
+    letter-spacing:4px;
+    font-family:Arial;
+}
+
+/* BASE LOGO (IMPORTANT) */
+.logo{
     width:320px;
-    max-width:85vw;
+    max-width:80vw;
     cursor:pointer;
     transition:0.25s ease;
     filter:contrast(120%) brightness(1);
 }
 
-/* ALIZARINE = glitch */
-.aliza:hover{
+/* ALIZARINE */
+.logo.aliza:hover{
     animation:glitch 0.15s infinite;
     filter:
     drop-shadow(3px 0 #ff0000)
@@ -38,8 +48,8 @@ body{
     transform:scale(1.08);
 }
 
-/* FEST = pulse */
-.fest:hover{
+/* FEST */
+.logo.fest:hover{
     animation:pulse 0.75s infinite;
     filter:
     drop-shadow(0 0 40px #ff0000);
@@ -56,33 +66,33 @@ body{
     100%{transform:translate(0);}
 }
 
-/* PULSE FEST */
+/* PULSE */
 @keyframes pulse{
     0%{transform:scale(1);}
     50%{transform:scale(1.18);}
     100%{transform:scale(1);}
 }
-    /* Version téléphone*/
+
+/* MOBILE */
 @media (max-width: 768px){
 
     body{
         flex-direction:column;
-        gap:40px; /* <-- ICI on réduit l’espace */
+        gap:40px;
     }
 
-    .logo.aliza{
-        width:260px; /* logos plus adaptés mobile */
+    .logo{
+        width:240px;
     }
 }
+
 </style>
 
 </head>
 
-<div style="position:absolute;top:40px;color:#fff;letter-spacing:4px;font-family:Arial;">
-FAIS TON CHOIX
-</div>
-
 <body>
+
+<div class="title">FAIS TON CHOIX</div>
 
 <!-- ALIZARINE -->
 <a href="groupe.html">
