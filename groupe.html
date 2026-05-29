@@ -224,6 +224,281 @@ concerts.forEach(item => {
     }
 });
 </script>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+    overflow-x:hidden;
+    overflow-y:visible;
+}
+.main-logo{
+    width:300px;
+    height:auto;
+    max-width:80%;
+    display:block;
+    margin:0px auto 10px auto;
+    transition:0.3s;
+
+    filter:
+    drop-shadow(0 0 8px #ff0000)
+    drop-shadow(0 0 18px #ff0000);
+    transition:0.3s;
+}
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
+    url("background.png");
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-2;
+}
+/* OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+header{
+    display:flex;
+    align-items:center; /* ⬅ même hauteur */
+    justify-content:flex-start;
+    gap:30px;
+
+    padding:40px 20px;
+}
+header.scrolled{
+    opacity:0;
+    transform:translateY(-20px);
+}
+h1{
+    font-size:5rem;
+    color:#ff0000;
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 25px #ff0000;
+    letter-spacing:3px;
+}
+
+.subtitle{
+    font-family:'Rock Salt', cursive;
+    color:#ff0000;
+    letter-spacing:2px;
+    margin:0;
+    font-size:0.9rem;
+    white-space:normal;
+}
+
+nav a{
+    color:#ff0000;
+    text-decoration:none;
+    margin:10px;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px #ff0000;
+}
+
+.box{
+    border:2px solid #ff0000;
+    background:rgba(0,0,0,0.7);
+    padding:30px;
+    box-shadow:0 0 20px rgba(255,0,0,0.3);
+    max-width:900px;
+    width:90%;
+    margin:auto;
+
+    overflow:hidden;
+}
+
+h2{
+    color:#39ff14;
+    margin-top:0;
+}
+.logo.aliza{
+    width:500px;
+    max-width:90%;
+
+    filter:
+    drop-shadow(0 0 5px #ff0000)
+    drop-shadow(0 0 10px #ff0000)
+    drop-shadow(0 0 20px #ff0000);
+
+    transition:0.2s;
+
+    position:relative;
+}
+
+/* HOVER GLITCH */
+
+.logo:hover{
+
+    animation:
+    glitch 0.15s infinite,
+    flicker 0.08s infinite;
+
+    filter:
+    drop-shadow(3px 0 #ff0000)
+    drop-shadow(-3px 0 #00ffff)
+    drop-shadow(0 0 20px #ff0000)
+    drop-shadow(0 0 40px #ff0000);
+
+}
+
+/* GLITCH ANIMATION */
+
+@keyframes flicker{
+    0%{opacity:1;}
+    10%{opacity:0.4;}
+    20%{opacity:1;}
+    30%{opacity:0.3;}
+    40%{opacity:1;}
+    50%{opacity:0.5;}
+    60%{opacity:1;}
+    70%{opacity:0.2;}
+    80%{opacity:1;}
+    90%{opacity:0.6;}
+    100%{opacity:1;}
+}
+/* animation scroll */
+@keyframes fadeOut{
+    from{
+        opacity:1;
+        transform:translateY(0);
+    }
+    to{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+}
+
+header.scrolled .main-logo{
+    animation:fadeOut 0.5s forwards;
+}
+/*Concerts*/
+.concert{
+    position:relative;
+    margin-bottom:15px;
+    cursor:pointer;
+    width:max-content;
+}
+
+/* affiche cachée */
+.poster{
+    position:absolute;
+    left:105%;
+    top:0%;
+    width:220px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    border:2px solid #ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+    z-index:999;
+}
+
+/* apparition au hover */
+.concert:hover .poster{
+    opacity:1;
+    visibility:visible;
+}
+.upcoming{
+    color:#ff0000;
+}
+
+.past{
+    color:rgba(255,255,255,0.4);
+    text-decoration:line-through;
+}
+/* Pour téléphone */
+@media (max-width: 768px){
+.concert{
+    width:100%;
+        }
+.poster{
+        position:static;
+
+        width:100%;
+        max-width:300px;
+
+        margin-top:10px;
+
+        opacity:0;
+        visibility:hidden;
+        display:none;
+
+        transform:none;
+    }
+
+    .concert.active .poster{
+        display:block;
+        opacity:1;
+        visibility:visible;
+    }
+    h1{
+        font-size:2.8rem;
+        text-align:center;
+    }
+
+    .subtitle{
+        text-align:center;
+        font-size:0.9rem;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .main-logo{
+        width:180px;
+    }
+    
+    <script>
+if(window.innerWidth <= 768){
+
+    const concerts = document.querySelectorAll(".concert");
+
+    concerts.forEach(concert => {
+
+        concert.addEventListener("click", () => {
+
+            concert.classList.toggle("active");
+
+        });
+
+    });
+
+}
+</script>
+}
 </body>
+    
 </html>
