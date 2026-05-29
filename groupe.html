@@ -2,62 +2,42 @@
 <html lang="fr">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ALIZARINE - GROUPE</title>
+    <title>ALIZARINE - GROUPE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Black+Ops+One&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const today = new Date();
 
-// on récupère tous les concerts
-const concerts = document.querySelectorAll("li[data-date]");
-
-concerts.forEach(item => {
-    const dateStr = item.getAttribute("data-date");
-    const concertDate = new Date(dateStr);
-
-    if(concertDate >= today){
-        item.classList.add("upcoming");
-    } else {
-        item.classList.add("past");
-    }
-});
-</script>
 <body>
+    <header id="header">
+        <img src="logo.png" class="main-logo" alt="ALIZARINE">
+        <p class="subtitle">Duo de punk rock alternatif</p>
+    </header>
 
-<header id="header">
+    <nav>
+        <a href="groupe.html">Concert</a>
+        <a href="musique.html">Musique</a>
+        <a href="contact.html">Contact</a>
+        <a href="fest.html">ALIZA'FEST</a>
+    </nav>
 
-    <img src="logo.png" class="main-logo" alt="ALIZARINE">
+    <section class="hero">
 
-    <p class="subtitle">Duo de punk rock alternatif</p>
+        <div class="box">
 
-</header>
-
-<nav>
-    <a href="groupe.html">Concert</a>
-    <a href="#musique.html">Musique</a>
-    <a href="contact.html">Contact</a>
-    <a href="fest.html">ALIZA'FEST</a>
-</nav>
-
-<section class="hero">
-
-<div class="box">
-
-<h2>ALIZARINE</h2>
-<h3>CONCERTS</h3>
-<ul>
-    <li data-date="2026-06-12">12 Juin 2026 : Paris</li>
-    <li data-date="2026-03-10">10 Mars 2026 : Lyon</li>
-    <li data-date="2026-01-15">15 Janvier 2026 : Lille</li>
-</ul>
-</section>
+            <h2>ALIZARINE</h2>
+            <h3>CONCERTS</h3>
+            <ul>
+                <li data-date="2026-06-12">12 Juin 2026 : Paris</li>
+                <li data-date="2026-03-10">10 Mars 2026 : Lyon</li>
+                <li data-date="2026-01-15">15 Janvier 2026 : Lille</li>
+            </ul>
+        </div>
+    </section>
 
 <!-- SCRIPT SCROLL PROPRE -->
 <script>
@@ -68,6 +48,23 @@ window.addEventListener("scroll", function(){
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
+    }
+});
+</script>
+    
+<!-- Script Concert -->
+<script>
+const today = new Date();
+// on récupère tous les concerts
+const concerts = document.querySelectorAll("li[data-date]");
+
+concerts.forEach(item => {
+    const dateStr = item.getAttribute("data-date");
+    const concertDate = new Date(dateStr);
+    if(concertDate >= today){
+        item.classList.add("upcoming");
+    } else {
+        item.classList.add("past");
     }
 });
 </script>
