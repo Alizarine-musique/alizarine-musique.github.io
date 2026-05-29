@@ -8,10 +8,10 @@ body{
     overflow-x:hidden;
 }
 .main-logo{
-    width:260px;
-    max-width:70%;
+    width:240px;
+    max-width:80%;
     display:block;
-    margin:10px auto 20px auto
+    margin:0px auto 10px auto
     transition:0.3s;
 
     filter:
@@ -57,7 +57,7 @@ body::before{
 
 header{
     text-align:center;
-    padding:100px 20px 60px;
+    padding:40px 20px 20px;
 }
 header.scrolled{
     opacity:0;
