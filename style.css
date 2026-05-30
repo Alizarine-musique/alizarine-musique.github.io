@@ -84,22 +84,18 @@ nav a:hover{
     padding:20px;
     border:2px solid #ff0000;
     background:rgba(0,0,0,0.65);
-
     box-shadow:0 0 20px rgba(255,0,0,0.25);
-
     overflow:hidden;
 }
 
 /* =========================
    TITRES
 ========================= */
-
 h2{
     color:#ff0000;
     font-family:'Rock Salt', cursive;
     margin-top:0;
 }
-
 h3{
     font-family:'Orbitron', sans-serif;
     letter-spacing:2px;
@@ -108,10 +104,9 @@ h3{
 /* =========================
    CONCERTS
 ========================= */
-
 ul{
     padding-left:0;
-    list-style:none;
+    list-style:disc outside;
 }
 
 .concert{
