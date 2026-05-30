@@ -1,22 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
-
 /* =========================
    BASE
 ========================= */
-*{box-sizing:border-box;}
+*{box-sizing:border-box;
+ }
 body{
    margin:0;
    background:black;
    color:white;
    font-family:'IM Fell English SC', cursive;
-      front-size:1.3;
-      line-height:1.2;
+   front-size:1.1rem;
+   line-height:1.5;
    overflow-x:hidden;
-   z-index:20;
 }
-
 /* =========================
    BACKGROUND
 ========================= */
@@ -29,20 +27,18 @@ body::before{
    background-position:center;
    z-index:-2;
 }
-
 /* =========================
    HEADER (LOGO CENTRÉ)
 ========================= */
 header{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:center;
+   text-align:center;
    margin-bottom:-40px;
    z-index:10;
 }
-/* LOGO CENTRÉ */
 .main-logo{
     width:300px;
     max-width:100%;
@@ -52,7 +48,9 @@ header{
         drop-shadow(0 0 18px #ff0000);
 }
 
-/* Sous titre */
+/* =========================
+Sous titre 
+=========================*/
 .subtitle{
     margin-top:10px;
     font-family:'Rock Salt', cursive;
@@ -61,39 +59,40 @@ header{
 }
 
 /* =========================
-   NAV
+   NAVIGATION
 ========================= */
 nav{
    position:relative;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
+   display:flex;
+   justify-content:center;
+   flex-wrap:wrap;
+   gap:18px;
    z-index:20;
 }
 nav a{
-    color:#29FF00;
-    text-decoration:none;
-    font-family:'Rock Salt', cursive;
-    font-size:1.1rem;
+   color:#29FF00;
+   text-decoration:none;
+   font-family:'Rock Salt', cursive;
+   font-size:1.1rem;
+   trasition:0.2s;
 }
 nav a:hover{
     text-shadow:0 0 50px #ff0000;
 }
 
 /* =========================
-   BOX (SAFE MOBILE)
+   BOX
 ========================= */
 .box{
-    width:100%;
-    max-width:900px;
-    margin:0 auto 40px;
+   width:100%;
+   max-width:900px;
+   margin:0 auto 40px;
    margin-top:15px;
-    padding:20px;
-    border:2px solid #ff0000;
-    background:rgba(0,0,0,0.65);
-    box-shadow:0 0 20px rgba(255,0,0,0.25);
-    overflow:hidden;
+   padding:20px;
+   border:2px solid #ff0000;
+   background:rgba(0,0,0,0.65);
+   box-shadow:0 0 20px rgba(255,0,0,0.25);
+   overflow:hidden;
    z-index:30;
 }
 
@@ -119,25 +118,30 @@ h3{
     font-family:'Orbitron', sans-serif;
     letter-spacing:2px;
 }
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:rgba(255,255,255,0.5);
+    font-size:0.8rem;
+}
+
 
 /* =========================
    CONCERTS
 ========================= */
 ul{
     padding-left:0;
-    list-style:disc;
+    list-style:none;
 }
 
 .concert{
-    position:relative;
-    padding:8px 0;
-    cursor:pointer;
-    display:block;
-    width:100%;
+   position:relative;
+   padding:10px 0;
+   cursor:pointer;
+   display:block;
+   width:100%;
    front-size:1.25rem;
 }
-
-/* TEXTES */
 .concert span{
     display:block;
     line-height:1.1;
@@ -152,31 +156,8 @@ ul{
 }
 
 /* =========================
-   AFFICHES (DANS LA BOX)
-========================= 
-.poster{
-   position:absolute;
-   top:50%;
-   width:300px;
-   max-width:50vw;
-   opacity:0;
-   visibility:hidden;
-   border:2px solid #ff0000;
-   box-shadow:0 0 20px rgba(255,0,0,0.5);
-   transition:0.2s ease;
-   pointer-events:none;
-   z-index:50;
-}
-
- hover uniquement DANS la box 
-.concert:hover .poster{
-    opacity:1;
-    visibility:visible;
-    transform:translate(20px,-50%);
-}
-
-*/
-/*Page musique*/
+   Page Musique
+========================= */
 .video-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -212,30 +193,11 @@ ul{
     color:#29FF00;
     font-size:1rem;
 }
-
-.links{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.links a{
-    color:#ff0000;
-    text-decoration:none;
-    font-family:'Rock Salt', cursive;
-    font-size:0.9rem;
-}
-
-.links a:hover{
-    text-shadow:0 0 10px #ff0000;
-}
 @media (max-width:900px){
     .album-grid{
         grid-template-columns:repeat(2,1fr);
     }
 }
-
 @media (max-width:600px){
     .album-grid{
         grid-template-columns:1fr;
@@ -264,7 +226,6 @@ ul{
     header{
         padding:15px;
     }
-
     .main-logo{
         width:180px;
     }
@@ -278,20 +239,4 @@ ul{
         padding:15px;
         width:calc(100% - 20px);
     }
-    .concert{
-        width:100%;
-    }
-
-
-    .concert.active .poster{
-        display:block;
-        opacity:1;
-        visibility:visible;
-    }*/
-}
-footer{
-    text-align:center;
-    padding:30px 20px;
-    color:rgba(255,255,255,0.5);
-    font-size:0.8rem;
 }
