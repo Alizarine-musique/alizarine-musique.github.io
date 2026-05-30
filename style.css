@@ -129,12 +129,13 @@ ul{
     cursor:pointer;
     display:block;
     width:100%;
+   front-size:1.25rem;
 }
 
 /* TEXTES */
 .concert span{
     display:block;
-    line-height:1.5;
+    line-height:1.1;
 }
 
 /* FUTURS / PASSÉS */
