@@ -240,3 +240,24 @@ ul{
         width:calc(100% - 20px);
     }
 }
+
+/* METTRE EN AVANT LE PROCHAIN*/
+.next-concert{
+  border:2px solid #fff;
+  padding:10px;
+  box-shadow:0 0 25px #29FF00;
+  transform:scale(1.02);
+  position:relative;
+}
+
+.next-concert::before{
+  content:"PROCHAIN CONCERT";
+  position:absolute;
+  top:-10px;
+  left:10px;
+  background:#29FF00;
+  color:black;
+  font-size:0.7rem;
+  padding:2px 6px;
+  font-family:'Orbitron', sans-serif;
+}
