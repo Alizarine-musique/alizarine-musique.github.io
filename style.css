@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
-
 /* =========================
    BASE
 ========================= */
-
-*{
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box;}
 body{
     margin:0;
     background:black;
@@ -15,23 +10,17 @@ body{
     font-family:'Orbitron', sans-serif;
     overflow-x:hidden;
 }
-
 /* =========================
    BACKGROUND
 ========================= */
-
 body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-        url("background.png");
-
-    background-size:cover;
-    background-position:center;
-    z-index:-2;
+   content:"";
+   position:fixed;
+   inset:0;
+   background:url("background.png");
+   background-size:cover;
+   background-position:center;
+   z-index:-2;
 }
 
 /* =========================
