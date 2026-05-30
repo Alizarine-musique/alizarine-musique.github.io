@@ -91,11 +91,20 @@ nav a:hover{
 /* =========================
    TITRES
 ========================= */
+h1{
+   color:#FF0000;
+   font-family:'Rock Salt', cursive;
+   text-align: center;
+   margin-top:0;
+   text-decoration:underline;
+   text-underline-offset:6px;
+}
 h2{
     color:#29FF00;
     font-family:'Rock Salt', cursive;
     text-align: center;
     margin-top:0;
+   front-size:1rem;
 }
 h3{
     font-family:'Orbitron', sans-serif;
