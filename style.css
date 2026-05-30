@@ -7,11 +7,13 @@
 ========================= */
 *{box-sizing:border-box;}
 body{
-    margin:0;
-    background:black;
-    color:white;
-    font-family:'IM Fell English SC', cursive;
-    overflow-x:hidden;
+   margin:0;
+   background:black;
+   color:white;
+   font-family:'IM Fell English SC', cursive;
+      front-size:1.3;
+      line-height:1.2;
+   overflow-x:hidden;
 }
 
 /* =========================
