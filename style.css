@@ -282,18 +282,16 @@ ul{
         width:100%;
     }
 
-   /* .poster{
-        position:static;
-        display:none;
-        width:100%;
-        max-width:250px;
-        margin-top:10px;
-        transform:none;
-    }
 
     .concert.active .poster{
         display:block;
         opacity:1;
         visibility:visible;
     }*/
+}
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:rgba(255,255,255,0.5);
+    font-size:0.8rem;
 }
