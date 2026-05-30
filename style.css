@@ -87,14 +87,17 @@ h1{
     white-space:normal;
 }
 
-nav a{
-    color:#ff0000;
-    text-decoration:none;
-    margin:10px;
-}
+nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-nav a:hover{
-    text-shadow:0 0 10px #ff0000;
+    flex-wrap:wrap;
+    gap:20px;
+
+    width:100%;
+    margin:10px auto 25px auto;
+    padding:0;
 }
 
 .box{
