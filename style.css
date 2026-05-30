@@ -92,7 +92,7 @@ nav a:hover{
    TITRES
 ========================= */
 h2{
-    color:#ff0000;
+    color:#29FF00;
     font-family:'Rock Salt', cursive;
     text-align: center;
     margin-top:0;
@@ -138,8 +138,8 @@ ul{
 .poster{
    position:absolute;
    top:50%;
-   width:200px;
-   max-width:40vw;
+   width:400px;
+   max-width:60vw;
    opacity:0;
    visibility:hidden;
    border:2px solid #ff0000;
