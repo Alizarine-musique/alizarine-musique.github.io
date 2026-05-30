@@ -46,7 +46,7 @@ header{
         drop-shadow(0 0 18px #ff0000);
 }
 
-/* SUBTITLE */
+/* Sous titre */
 .subtitle{
     margin-top:10px;
     font-family:'Rock Salt', cursive;
@@ -57,23 +57,19 @@ header{
 /* =========================
    NAV
 ========================= */
-
 nav{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:18px;
-
     padding:10px 15px 25px;
 }
-
 nav a{
     color:#ff0000;
     text-decoration:none;
     font-family:'Rock Salt', cursive;
     font-size:0.85rem;
 }
-
 nav a:hover{
     text-shadow:0 0 10px #ff0000;
 }
@@ -81,14 +77,11 @@ nav a:hover{
 /* =========================
    BOX (SAFE MOBILE)
 ========================= */
-
 .box{
     width:100%;
     max-width:900px;
-
     margin:0 auto 40px;
     padding:20px;
-
     border:2px solid #ff0000;
     background:rgba(0,0,0,0.65);
 
