@@ -73,13 +73,13 @@ nav{
    z-index:30;
 }
 nav a{
-    color:#ff0000;
+    color:#29FF00;
     text-decoration:none;
     font-family:'Rock Salt', cursive;
     font-size:1.1rem;
 }
 nav a:hover{
-    text-shadow:0 0 50px #29FF00;
+    text-shadow:0 0 50px #ff0000;
 }
 
 /* =========================
