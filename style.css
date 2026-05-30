@@ -9,13 +9,12 @@ body{
     overflow-y:visible;
 }
 .main-logo{
-    width:600px;
+    width:300px;
     height:auto;
-    max-width:80%;
+    max-width:100%;
     display:block;
     margin:0px auto 10px auto;
     transition:0.3s;
-
     filter:
     drop-shadow(0 0 8px #ff0000)
     drop-shadow(0 0 18px #ff0000);
@@ -27,14 +26,10 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-
     background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
     url("background.png");
-
     background-size:cover;
     background-position:center;
-
     z-index:-2;
 }
 /* OVERLAY */
@@ -101,15 +96,14 @@ nav{
 }
 
 .box{
-    border:2px solid #ff0000;
+    border:3px solid #ff0000;
     background:rgba(0,0,0,0.7);
     padding:30px;
     box-shadow:0 0 20px rgba(255,0,0,0.3);
     max-width:900px;
-    width:90%;
+    width:100%;
     margin:auto;
-
-    overflow:hidden;
+    box-sizing:border-box;
 }
 
 h2{
