@@ -23,6 +23,7 @@ body::before{
    position:fixed;
    inset:0;
    background:url("background2.png");
+   background:linear-gradient(rgba(0,0,0,.75),
    background-size:cover;
    background-position:center;
    z-index:-2;
