@@ -22,7 +22,7 @@ body::before{
    content:"";
    position:fixed;
    inset:0;
-   background:url("background.png");
+   background:url("background2.png");
    background-size:cover;
    background-position:center;
    z-index:-2;
