@@ -536,15 +536,22 @@ ul{
 .photo-block img {
   filter: contrast(1.05);
 }
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
+  gap:20px;
+  justify-items:center;
+  align-items:stretch;
+}
 @media (max-width:900px){
-  .photo-block{
-    grid-template-columns:repeat(1, 1fr);
+  .photo-grid{
+    grid-template-columns:repeat 1fr;
   }
 }
 
 @media (max-width:600px){
-  .photo-block{
-    grid-template-columns:repeat(1, 1fr);
+  .photo-grid{
+    grid-template-columns:repeat 1fr;
   }
 }
 
