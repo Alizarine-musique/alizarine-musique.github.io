@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 /* =========================
@@ -46,6 +47,7 @@ header{
    justify-content:center;
    text-align:center;
    margin-bottom:-40px;
+   z-index:10;
 }
 .main-logo{
     width:300px;
@@ -101,6 +103,7 @@ nav a:hover{
    background:rgba(0,0,0,0.65);
    box-shadow:0 0 20px rgba(255,0,0,0.25);
    overflow:hidden;
+   z-index:30;
 }
 
 /* =========================
@@ -244,7 +247,7 @@ ul{
 
 .platform{
     display:inline-flex;
-    text-align:center;
+    texte-align:center;
     color:#ff0000;
     text-decoration:none;
     font-family:'Rock Salt', cursive;
@@ -271,6 +274,11 @@ ul{
 @media (max-width:600px){
     .album-grid{
         grid-template-columns:1fr;
+    }
+}
+@media (max-width:900px){
+    .video-grid{
+        grid-template-columns:repeat(3, 1fr);
     }
 }
 @media (max-width:600px){
@@ -403,6 +411,12 @@ ul{
     grid-template-columns:repeat(2, 1fr);
   }
 }
+
+@media (max-width:600px){
+  .social-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
 /*partie 2 */
 .pdf-grid{
   display:grid;
@@ -511,7 +525,6 @@ ul{
   border: 1px solid #29FF00;
   box-shadow: 0 0 20px rgba(255,0,0,0.3);
   transition: 0.3s ease;
-  filter: contrast(1.05);
 }
 
 .photo-block img:hover {
@@ -519,7 +532,10 @@ ul{
   box-shadow: 0 0 30px rgb(255, 0, 0);
 }
 
-
+/* léger effet punk */
+.photo-block img {
+  filter: contrast(1.05);
+}
 .photo-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
@@ -529,29 +545,37 @@ ul{
 }
 @media (max-width:900px){
   .photo-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat 1fr;
   }
 }
 
 @media (max-width:600px){
   .photo-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat 1fr;
   }
 }
 
 /* =========================
    TEXTE BIO
 ========================= */
+.box h2 {
+  color: #29FF00;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
 
 .box p, .box li {
   font-family: 'IM Fell English SC', serif;
   line-height: 1.6;
-  margin: 10px 0;
 }
 
 /* =========================
    LISTE
 ========================= */
+.box ul {
+  padding-left: 20px;
+}
+
 .box li {
   margin: 5px 0;
 }
@@ -561,6 +585,11 @@ ul{
   text-decoration: underline;
   text-underline-offset: 6px;
 }
+
+.box p {
+  margin: 10px 0;
+}
+
 .box ul {
   margin: 10px 0 20px;
   padding-left: 20px;
