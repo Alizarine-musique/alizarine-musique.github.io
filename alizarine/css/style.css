@@ -219,6 +219,11 @@ ul{
   transform:scale(1.05);
   box-shadow:0 0 20px rgba(41,255,0,0.7);
 }
+.platform,
+.platform:visited,
+.platform:active{
+  color:#ff0000 !important;
+}
 @media (max-width:900px){
     .album-grid{
         grid-template-columns:repeat(2,1fr);
@@ -347,6 +352,17 @@ ul{
 .social img:hover{
   transform:scale(1.1);
   box-shadow:0 0 20px rgba(41,255,0,0.7);
+}
+@media (max-width:900px){
+  .social-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .social-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
 }
 /*partie 2 */
 .pdf-grid{
