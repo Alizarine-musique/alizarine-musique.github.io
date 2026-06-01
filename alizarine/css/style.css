@@ -11,7 +11,7 @@ body{
    background:black;
    color:white;
    font-family:'IM Fell English SC', cursive;
-   front-size:1.1rem;
+   font-size:1.1rem;
    line-height:1.5;
    overflow-x:hidden;
 }
@@ -120,7 +120,8 @@ h2{
    font-size:1.5rem;
 }
 h3{
-    font-family:'Orbitron', sans-serif;
+    font-family:'Rock Salt', cursive;
+    font-size:1.25rem;
     letter-spacing:2px;
 }
 h4{color:#FF0000;
@@ -152,7 +153,7 @@ ul{
    cursor:pointer;
    display:block;
    width:100%;
-   front-size:1.25rem;
+   font-size:1.25rem;
 }
 .concert span{
     display:block;
@@ -165,6 +166,27 @@ ul{
 }
 .past{
     color:#FF0000;
+}
+
+/*affiches*/
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+
+  display:none;
+  justify-content:center;
+  align-items:center;
+
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+
+  border:2px solid #29FF00;
+  box-shadow:0 0 20px rgba(41,255,0,0.5);
 }
 
 /* =========================
@@ -222,7 +244,7 @@ ul{
     color:#ff0000;
     text-decoration:none;
     font-family:'Rock Salt', cursive;
-    front-size:1rem;
+    font-size:1rem;
     border:1px solid #29FF00;
     padding:10px 15px;
     transition:0.2s ease;

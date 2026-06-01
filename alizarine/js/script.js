@@ -1,56 +1,18 @@
-/*
-const concerts = Array.from(document.querySelectorAll(".concert"));
-
-const now = new Date();
-
-let nextConcert = null;
-let nextDate = null;
-
-// 1. nettoyer + classer
-concerts.forEach(el => {
-  const date = new Date(el.dataset.date);
-
-  if (isNaN(date)) return;
-
-  if (date < now) {
-    el.classList.add("past");
-  } else {
-    el.classList.add("upcoming");
-
-    if (!nextDate || date < nextDate) {
-      nextDate = date;
-      nextConcert = el;
-    }
-  }
-});
-
-// 2. TRI GLOBAL CHRONOLOGIQUE (IMPORTANT)
-concerts
-  .sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date))
-  .forEach(el => {
-    el.parentNode.appendChild(el);
-  });
-
-// 3. mise en avant du prochain concert
-if (nextConcert) {
-  nextConcert.classList.add("next-concert");
-}
-*/
 const lists = document.querySelectorAll("ul");
-
 const now = new Date();
 
 let nextConcert = null;
 let nextDate = null;
 
-// 🔁 On traite chaque liste séparément
+// 📱 détection mobile
+const isMobile = window.matchMedia("(max-width:768px)").matches;
+
+// 🔁 TRI + CLASSES
 lists.forEach(list => {
   const concerts = Array.from(list.querySelectorAll(".concert"));
 
-  // 1. classer + trouver prochain concert
   concerts.forEach(el => {
     const date = new Date(el.dataset.date);
-
     if (isNaN(date)) return;
 
     if (date < now) {
@@ -65,8 +27,6 @@ lists.forEach(list => {
     }
   });
 
-  // 2. TRI DANS CHAQUE LISTE :
-  // futurs d'abord, puis passés
   concerts
     .sort((a, b) => {
       const dateA = new Date(a.dataset.date);
@@ -75,20 +35,45 @@ lists.forEach(list => {
       const aPast = dateA < now;
       const bPast = dateB < now;
 
-      // futurs avant passés
-      if (aPast !== bPast) {
-        return aPast ? 1 : -1;
-      }
-
-      // sinon tri chronologique
+      if (aPast !== bPast) return aPast ? 1 : -1;
       return dateA - dateB;
     })
-    .forEach(el => {
-      list.appendChild(el);
-    });
+    .forEach(el => list.appendChild(el));
 });
 
-// 3. mise en avant du prochain concert global
+// ⭐ mise en avant prochain concert
 if (nextConcert) {
   nextConcert.classList.add("next-concert");
 }
+
+// =========================
+// 🎤 LIGHTBOX
+// =========================
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".concert").forEach(item => {
+  item.addEventListener("click", (e) => {
+
+    const img = item.dataset.img;
+
+    if (!img) return;
+
+    // 📱 MOBILE → pas de lightbox
+    if (isMobile) {
+      window.open(img, "_blank");
+      return;
+    }
+
+    // 💻 DESKTOP → lightbox
+    lightboxImg.src = img;
+    lightbox.style.display = "flex";
+  });
+});
+
+// ❌ fermer lightbox
+lightbox.addEventListener("click", () => {
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+});
