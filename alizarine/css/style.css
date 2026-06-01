@@ -136,6 +136,8 @@ h4{color:#FF0000;
    margin-bottom:5px;
    font-size:1.5rem;
 }
+p{ text-indent: 2em; }
+
 footer{
     text-align:center;
     padding:30px 20px;
@@ -372,6 +374,17 @@ ul{
 .mail-link a:hover{
   color:#FF0000;
 }
+.com-link2 a{
+  color:#29FF00;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  font-size:1rem;
+  transition:0.2s ease;
+}
+.com-link2 a:hover{
+  color:#FF0000;
+}
+
 .social-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
@@ -509,14 +522,14 @@ ul{
 .photo-block img {
   width: 100%;
   max-width: 800px;
-  border: 2px solid #29FF00;
+  border: 1px solid #29FF00;
   box-shadow: 0 0 20px rgba(255,0,0,0.3);
   transition: 0.3s ease;
 }
 
 .photo-block img:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(41,255,0,0.5);
+  box-shadow: 0 0 30px rgb(255, 0, 0);
 }
 
 /* léger effet punk */
