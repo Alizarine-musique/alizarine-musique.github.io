@@ -123,6 +123,13 @@ h3{
     font-family:'Orbitron', sans-serif;
     letter-spacing:2px;
 }
+h4{color:#FF0000;
+   font-family:'Rock Salt', cursive;
+   text-align: center;
+   margin-top:0;
+   text-decoration:underline;
+   text-underline-offset:6px;
+}
 footer{
     text-align:center;
     padding:30px 20px;
@@ -373,7 +380,7 @@ ul{
 /*partie 2 */
 .pdf-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(2, 1fr);
   gap:15px;
   justify-items:center;
 }
@@ -400,4 +407,70 @@ ul{
 
 .pdf:hover iframe{
   box-shadow:0 0 20px rgba(41,255,0,0.7);
+}
+/* PAGE CONTACT */
+.download-item{
+  position:relative;
+  text-align:center;
+  display:inline-block;
+  margin:10px;
+}
+
+/* lien */
+.logo-link{
+  color:#ff0000;
+  font-family:'Rock Salt', cursive;
+  text-decoration:none;
+  border:2px solid #29FF00;
+  padding:8px 12px;
+  display:inline-block;
+  transition:0.2s;
+}
+
+.logo-link:hover{
+  box-shadow:0 0 20px rgba(41,255,0,0.7);
+  transform:scale(1.05);
+}
+
+/* preview caché */
+.logo-preview{
+  position:absolute;
+  top:-160px;
+  left:50%;
+  transform:translateX(-50%);
+  width:150px;
+
+  opacity:0;
+  visibility:hidden;
+  transition:0.2s ease;
+
+  border:2px solid #29FF00;
+  box-shadow:0 0 15px rgba(41,255,0,0.5);
+  background:black;
+  padding:5px;
+  z-index:10;
+}
+
+/* affichage au hover */
+.download-item:hover .logo-preview{
+  opacity:1;
+  visibility:visible;
+}
+.download-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+  justify-items:center;
+  align-items:start;
+}
+@media (max-width:900px){
+  .download-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .download-grid{
+    grid-template-columns:1fr;
+  }
 }
