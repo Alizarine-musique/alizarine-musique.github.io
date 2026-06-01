@@ -15,6 +15,11 @@ body{
    line-height:1.5;
    overflow-x:hidden;
 }
+.page{
+    max-width:900px;
+    margin:0 auto;
+    padding:0 15px;
+}
 /* =========================
    BACKGROUND
 ========================= */
@@ -199,12 +204,13 @@ ul{
 .platform-grid{
   display:flex;
   justify-content:center;
+  align-items:center;
   gap:20px;
   flex-wrap:wrap;
 }
 
 .platform{
-    display:block;
+    display:inline-flex;
     texte-align:center;
     color:#ff0000;
     text-decoration:none;
@@ -283,15 +289,15 @@ ul{
 /*ALBUM*/
 .album-layout{
   display:flex;
-  gap:20px;
+  gap:0px;
   justify-content:center;
   align-items:flex-start;
 }
 
 /* les deux colonnes */
 .album-layout .box{
-  flex:1;
-  max-width:500px;
+  flex: 1;
+  max-width:400px;
 }
 
 /* responsive mobile */
