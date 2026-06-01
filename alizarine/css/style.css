@@ -196,6 +196,27 @@ ul{
     color:#29FF00;
     font-size:1rem;
 }
+.platform-grid{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.platform{
+  color:#29FF00;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  border:2px solid #29FF00;
+  padding:10px 15px;
+  transition:0.2s ease;
+  box-shadow:0 0 10px rgba(41,255,0,0.3);
+}
+
+.platform:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(41,255,0,0.7);
+}
 @media (max-width:900px){
     .album-grid{
         grid-template-columns:repeat(2,1fr);
