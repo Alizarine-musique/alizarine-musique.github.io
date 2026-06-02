@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliza Fest</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+/* CONTENEUR CENTRÉ */
+.video-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+/* FULL SCREEN VIDEO */
+video{
+    width:80vw;
+    max-width:900px;
+    height:auto;
+
+    object-fit:cover;
+    cursor:pointer;
+    filter:contrast(1.2) saturate(1.2);
+
+}
+video:hover{
+                        animation:glitch 0.15s infinite;
+                        filter:
+                        drop-shadow(3px 0 #00fff2)
+                        drop-shadow(-3px 0 #15ff00)
+                        drop-shadow(0 0 35px #15ff00);
+                        transform:scale(1.08);
+                    }
+
+/* GLITCH */
+@keyframes glitch{
+    0%{transform:translate(0);}
+    20%{transform:translate(-3px,2px);}
+    40%{transform:translate(3px,-2px);}
+    60%{transform:translate(-2px,-2px);}
+    80%{transform:translate(2px,2px);}
+    100%{transform:translate(0);}
+}
+
+/* HIDE ON MOBILE */
+@media(max-width:768px){
+    body{
+        display:none;
+    }
+}
+/* BOUTON SON */
+button{
+    padding:10px 18px;
+    background:black;
+    color:white;
+    border:1px solid white;
+    cursor:pointer;
+    font-size:14px;
+    transition:0.2s;
+}
+
+button:hover{animation:glitch 0.15s infinite;
+                        filter:
+                        drop-shadow(3px 0 #00fff2)
+                        drop-shadow(-3px 0 #15ff00)
+                        drop-shadow(0 0 35px #15ff00);
+                        transform:scale(1.08);
+                    }
+</style>
+</head>
+
+<body>
+<div class="video-wrapper">
+    <video id="introVideo" autoplay playsinline>
+        <source src="image/teaser.mp4" type="video/mp4">
+    </video>
+    <button id="soundBtn">🔇 Muet</button>
+</div>
+
+<script>
+const video = document.getElementById("introVideo");
+const btn = document.getElementById("soundBtn");
+/* IMPORTANT: activer le son après interaction */
+video.muted = false;
+
+/* clic => redirection */
+video.addEventListener("click", () => {
+    window.location.href = "programmation.html";
+});
+
+/* fin vidéo => redirection */
+video.addEventListener("ended", () => {
+    window.location.href = "programmation.html";
+});
+
+/* sécurité autoplay mobile */
+video.play().catch(() => {
+    video.muted = true;
+    video.play();
+});
+btn.addEventListener("click", () => {
+
+    if (video.muted) {
+        video.muted = false;
+        btn.textContent = "🔊 Son";
+    } else {
+        video.muted = true;
+        btn.textContent = "🔇 Muet";
+    }
+
+});
+</script>
+
+</body>
+</html>

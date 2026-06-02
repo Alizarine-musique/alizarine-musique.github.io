@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+/* =========================
+   BASE
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+
+*{box-sizing:border-box;
+ }
+body{
+   margin:0;
+   background:black;
+   color:white;
+   font-family:'IM Fell English SC', cursive;
+   font-size:1.1rem;
+   line-height:1.5;
+   overflow-x:hidden;
+}
+.page{
+    max-width:900px;
+    margin:0 auto;
+    padding:0 15px;
+}
+/* =========================
+   BACKGROUND
+========================= */
+body::before{
+   content:"";
+   position:fixed;
+   inset:0;
+   background:url("../image/background.png");
+   background-size:cover;
+   background-position:center;
+   z-index:-2;
+}
+/* =========================
+   HEADER (LOGO CENTRÉ)
+========================= */
+header{
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:center;
+   text-align:center;
+   margin-bottom:-40px;
+   z-index:10;
+}
+.main-logo{
+    width:300px;
+    max-width:100%;
+    margin:0 auto;
+    filter:
+        drop-shadow(0 0 8px #ff0000)
+        drop-shadow(0 0 18px #ff0000);
+}
+
+/* =========================
+Sous titre 
+=========================*/
+.subtitle{
+    margin-top:10px;
+    font-family:'Rock Salt', cursive;
+    color:#ff0000;
+    font-size:0.85rem;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+nav{
+   position:relative;
+   display:flex;
+   justify-content:center;
+   flex-wrap:wrap;
+   gap:18px;
+   z-index:20;
+}
+nav a{
+   color:#29FF00;
+   text-decoration:none;
+   font-family:'Rock Salt', cursive;
+   font-size:1.1rem;
+   transition:0.2s;
+}
+nav a:hover{
+    text-shadow:0 0 50px #ff0000;
+}
+
+/* =========================
+   BOX
+========================= */
+.box{
+   width:100%;
+   max-width:900px;
+   margin:0 auto;
+   margin-top:15px;
+   padding:20px;
+   border:2px solid #ff0000;
+   background:rgba(0,0,0,0.65);
+   box-shadow:0 0 20px rgba(255,0,0,0.25);
+   overflow:hidden;
+   z-index:30;
+}
+
+/* =========================
+   TITRES
+========================= */
+h1{
+   color:#FF0000;
+   font-family:'Rock Salt', cursive;
+   text-align: center;
+   margin-top:0;
+   text-decoration:underline;
+   text-underline-offset:6px;
+}
+h2{
+    color:#29FF00;
+    font-family:'Rock Salt', cursive;
+    text-align: center;
+    margin-top:0;
+   font-size:1.5rem;
+}
+h3{
+    font-family:'Rock Salt', cursive;
+    font-size:1.25rem;
+    letter-spacing:2px;
+}
+h4{color:#FF0000;
+   font-family:'Rock Salt', cursive;
+   text-align: center;
+   margin-top:10px;
+   margin-bottom:5px;
+   font-size:1.5rem;
+}
+p{ text-indent: 2em; }
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    color:rgba(255,255,255,0.5);
+    font-size:0.8rem;
+}
+
+
+/* =========================
+   CONCERTS
+========================= */
+ul{
+    padding-left:0;
+    list-style:none;
+}
+
+.concert{
+   position:relative;
+   padding:10px 0;
+   cursor:pointer;
+   display:block;
+   width:100%;
+   font-size:1.25rem;
+}
+.concert span{
+    display:block;
+    line-height:1.1;
+}
+
+/* FUTURS / PASSÉS */
+.upcoming{
+    color:#FFFFFF;
+}
+.past{
+    color:#FF0000;
+}
+
+/*affiches*/
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+
+  display:none;
+  justify-content:center;
+  align-items:center;
+
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+
+  border:2px solid #29FF00;
+  box-shadow:0 0 20px rgba(41,255,0,0.5);
+}
+
+/* =========================
+   Page Musique
+========================= */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:20px;
+}
+.video-grid2{
+    margin-top:20px;
+}
+.album-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:20px;
+}
+.album{
+    border:1px solid #29FF00;
+    background:rgba(0,0,0,0.6);
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(41,255,0,0.2);
+    transition:0.2s;
+}
+
+.album:hover{
+    transform:translateY(-5px);
+}
+.album img{
+    width:100%;
+    max-width:250px;
+    border:1px solid #ff0000;
+    box-shadow:0 0 10px rgba(255,0,0,0.3);
+}
+.album h3{
+    margin:10px 0;
+    color:#29FF00;
+    font-size:1rem;
+}
+.platform-grid{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.platform{
+    display:inline-flex;
+    texte-align:center;
+    color:#ff0000;
+    text-decoration:none;
+    font-family:'Rock Salt', cursive;
+    font-size:1rem;
+    border:1px solid #29FF00;
+    padding:10px 15px;
+    transition:0.2s ease;
+    box-shadow:0 0 10px rgba(41,255,0,0.3);
+}
+.platform:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgb(255, 0, 0);
+}
+.platform,
+.platform:visited,
+.platform:active{
+  color:#ff0000 !important;
+}
+@media (max-width:900px){
+    .album-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+@media (max-width:600px){
+    .album-grid{
+        grid-template-columns:1fr;
+    }
+}
+@media (max-width:900px){
+    .video-grid{
+        grid-template-columns:repeat(3, 1fr);
+    }
+}
+@media (max-width:600px){
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+}
+.video iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:1px solid #29FF00;
+    box-shadow:0 0 15px rgba(41,255,0,0.2);
+}
+/* =========================
+   MOBILE (ZÉRO DÉBORDEMENT)
+========================= */
+@media (max-width:768px){
+    header{
+        padding:15px;
+    }
+    .main-logo{
+        width:180px;
+    }
+    .subtitle{
+        font-size:0.75rem;
+    }
+    nav{
+        gap:10px;
+    }
+    .box{
+        padding:15px;
+        width:calc(100% - 20px);
+    }
+}
+
+/* METTRE EN AVANT LE PROCHAIN*/
+.next-concert{
+  border:2px solid #fff;
+  padding:10px;
+  box-shadow:0 0 25px #FF0000;
+  transform:scale(1.02);
+  position:relative;
+}
+/*ALBUM*/
+.album-layout{
+  display:flex;
+  gap:0px;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* les deux colonnes */
+.album-layout .box{
+  flex: 1;
+  max-width:400px;
+}
+
+/* responsive mobile */
+@media (max-width:900px){
+  .album-layout{
+    flex-direction:column;
+  }
+}
+
+/* =========================
+   Page Albums
+========================= */
+
+.pochette img{
+  border:1px solid #29FF00;
+  box-shadow:0 0 15px rgba(255,0,0,0.3);
+}
+
+/* =========================
+   Page contact
+========================= */
+/*partie 1 */
+.mail-link{
+  text-align:center;
+  margin-top:10px;
+}
+
+.mail-link a{
+  color:#29FF00;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  font-size:1rem;
+  transition:0.2s ease;
+}
+.mail-link a::before{
+  content:"✉ ";
+}
+.mail-link a:hover{
+  color:#FF0000;
+}
+.com-link2 a{
+  color:#29FF00;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  font-size:1rem;
+  transition:0.2s ease;
+}
+.com-link2 a:hover{
+  color:#FF0000;
+}
+
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
+  gap:15px;
+  justify-items:center;
+}
+
+.social img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border: 1px solid #29FF00;
+  padding:5px;
+  transition:0.2s ease;
+  box-shadow:0 0 10px rgba(41,255,0,0.3);
+}
+
+.social img:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgb(255, 0, 0);
+}
+@media (max-width:900px){
+  .social-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .social-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+/*partie 2 */
+.pdf-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:15px;
+  justify-items:center;
+}
+
+.pdf{
+  text-decoration:none;
+  color:white;
+  text-align:center;
+}
+
+.pdf iframe{
+  width:100%;
+  height:200px;
+  border:2px solid #29FF00;
+  box-shadow:0 0 10px rgba(41,255,0,0.3);
+  pointer-events:none; /* empêche interaction dans mini preview */
+}
+
+.pdf p{
+  margin-top:8px;
+  font-family:'Rock Salt', cursive;
+  color:#29FF00;
+}
+
+.pdf:hover iframe{
+  box-shadow:0 0 20px rgba(41,255,0,0.7);
+}
+/* PAGE CONTACT */
+.download-item{
+    position:relative;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
+    width:100%;
+    margin:10px;
+    border:1px solid #29FF00;
+}
+.download-item:hover{
+  box-shadow:0 0 20px rgb(255, 0, 0);
+  transform:scale(1.05);
+}
+
+.download-item:hover .logo-preview{
+  opacity:1;
+  visibility:visible;
+}
+.download-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
+  gap:20px;
+  justify-items:center;
+  align-items:stretch;
+}
+
+
+
+/* lien */
+.logo-link{
+  color:#ff0000;
+  font-family:'Rock Salt', cursive;
+  text-decoration:none;
+  /*border:2px solid #29FF00;*/
+  padding:8px 12px;
+  display:inline-block;
+  transition:0.2s;
+}
+
+/* preview caché */
+.logo-preview{
+  position:absolute;
+  top:-160px;
+  left:50%;
+  transform:translateX(-50%);
+  width:150px;
+
+  opacity:0;
+  visibility:hidden;
+  transition:0.2s ease;
+
+  border:1px solid #29FF00;
+  box-shadow:0 0 15px rgba(41,255,0,0.5);
+  background:black;
+  padding:5px;
+  z-index:10;
+}
+/*BIO
+==========================*/
+
+/* =========================
+   BLOCS PHOTO
+========================= */
+.photo-block {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.photo-block img {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #29FF00;
+  box-shadow: 0 0 20px rgba(255,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.photo-block img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgb(255, 0, 0);
+}
+
+/* léger effet punk */
+.photo-block img {
+  filter: contrast(1.05);
+}
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(50px, 1fr));
+  gap:20px;
+  justify-items:center;
+  align-items:stretch;
+}
+@media (max-width:900px){
+  .photo-grid{
+    grid-template-columns:repeat 1fr;
+  }
+}
+
+@media (max-width:600px){
+  .photo-grid{
+    grid-template-columns:repeat 1fr;
+  }
+}
+
+/* =========================
+   TEXTE BIO
+========================= */
+.box h2 {
+  color: #29FF00;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.box p, .box li {
+  font-family: 'IM Fell English SC', serif;
+  line-height: 1.6;
+}
+
+/* =========================
+   LISTE
+========================= */
+.box ul {
+  padding-left: 20px;
+}
+
+.box li {
+  margin: 5px 0;
+}
+.box h2 {
+  margin-top: 25px;
+  color: #29FF00;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.box p {
+  margin: 10px 0;
+}
+
+.box ul {
+  margin: 10px 0 20px;
+  padding-left: 20px;
+}
+
+.box li {
+  margin: 5px 0;
+}
