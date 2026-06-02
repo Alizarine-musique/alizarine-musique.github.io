@@ -18,6 +18,11 @@
   z-index: -1;
   opacity: 0.5; /* option pour laisser lire le texte */
 }
+@media (max-width: 768px) {
+  .background-video {
+    display: none !important;
+  }
+}
 
 .hero-content {
     height: 100%;
