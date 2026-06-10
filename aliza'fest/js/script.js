@@ -13,3 +13,11 @@ if (window.innerWidth <= 768) {
     video.load();
   }
 }
+if (window.innerWidth > 768) {
+    document.getElementById('header').insertAdjacentHTML(
+        'beforeend',
+        `<video autoplay muted loop playsinline class="background-video">
+            <source src="image/background2.mp4" type="video/mp4">
+        </video>`
+    );
+}
