@@ -70,7 +70,6 @@ nav a{
    color:#00ff00;
    text-decoration:none;
    font-family:'ROCK SALT', cursive;
-   letter-spacing:2px;
    font-size:1.1rem;
    transition:0.2s;
 }
@@ -154,7 +153,18 @@ color:#29FF00;
   margin: 10px 0;
   text-align: center; 
 }
+.box ul {
+  text-align:center;
+  margin-top:10px;
+}
 
+.box ul a{
+  color:#29FF00;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  font-size:1rem;
+  transition:0.2s ease;
+}
 /* =========================
    DIVIDER
 ========================= */
