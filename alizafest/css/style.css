@@ -156,7 +156,9 @@ color:#29FF00;
   margin: 10px 0;
   text-align: center; 
 }
-
+a {
+    text-decoration: none;
+}
 /* =========================
    DIVIDER
 ========================= */
@@ -255,4 +257,53 @@ COMPTEURS
     color:rgba(255,255,255,0.5);
     font-size:0.8rem;
     font-family:'IM Fell English SC', cursive;
+}
+
+/*===============================================TEST================*/
+.lineup-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    margin-inline: 10px;
+    margin-top:0px;
+}
+.band-card {
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+  filter: contrast(1.3) saturate(1.20);
+}
+.band-card img {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid #29FF00;
+  box-shadow: 0 0 20px rgba(255,0,0,0.3);
+  transition: 0.3s ease;
+
+}
+.band-card img:hover {
+  filter: contrast(1.0) saturate(0);
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(41,255,0,0.5);
+}
+
+.band-card h3{
+    margin:10px 0 5px 0;
+    color:#ff0000;
+    font-family:'Rock Salt', cursive;
+    align-items: flex-end;
+    font-size:1rem;
+}
+
+.band-card p{
+    font-size:0.9rem;
+    color: #00ff00;
+    align-items: flex-end;
+    opacity:0.8;
+}
+
+
+@media (max-width:600px){
+    .lineup-grid{
+        grid-template-columns:1fr;
+    }
 }
