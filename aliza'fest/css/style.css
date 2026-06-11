@@ -49,9 +49,9 @@ header{
    margin-bottom:-40px;
 }
 .main-logo{
-    width:300px;
+    width:250px;
     max-width:100%;
-    margin:0 auto;
+    margin-bottom: 50px;
     opacity: 2;
     filter:
         drop-shadow(0 0 8px #ff0000)
@@ -189,6 +189,29 @@ color:#29FF00;
   box-shadow: 0 0 30px rgba(41,255,0,0.5);
 }
 
+/*==========================
+COMPTEURS
+=========================*/
+.counter{
+    font-size:2rem;
+    font-weight:bold;
+    color:#ff0000;
+    text-align:center;
+}
+.box-counter{
+    display:grid;
+    align-items: center;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0px;
+    margin:0px 0;
+}
+.box-2023{
+    display:grid;
+    align-items: flex-end;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0px;
+    margin:0px 0;
+}
 /* =========================
    MOBILE
 ========================= */
@@ -212,6 +235,16 @@ color:#29FF00;
     display: none !important;
   }
 }
+@media (max-width:900px){
+  .box-2023{
+    grid-template-columns:repeat(1, 1fr);
+  }
+}
+@media (max-width:900px){
+  .box-counter{
+    grid-template-columns:repeat(1, 1fr);
+  }
+}
 
 /* =========================
    FOOTER
@@ -221,4 +254,5 @@ color:#29FF00;
     padding:30px 20px;
     color:rgba(255,255,255,0.5);
     font-size:0.8rem;
+    font-family:'IM Fell English SC', cursive;
 }
