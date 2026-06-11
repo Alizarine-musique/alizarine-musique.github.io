@@ -33,6 +33,7 @@
 <section class="hero">
 
 <h1>Programmation</h1>
+<button id="soundBtn">🔇 Muet</button>
 
 <div class="divider"></div>
 
@@ -41,30 +42,41 @@
 <h2>Vendredi</h2>
 
 <div class="lineup-grid">
-    <a class="band-card" href="https://lien-groupe-1.com" target="_blank">
+    <a class="band-card"
+    onmouseenter="playHover('groupe1')" 
+    onmouseleave="stopHover('groupe1')">
         <img src="image/groupe1.jpg" alt="Scorcher HxC">
         <h3>Scorcher HxC</h3>
         <p><br>19h30 - Hardcore</p>
     </a>
+<audio id="groupe1" src="audio/groupe1.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-2.com" target="_blank">
+    <a  class="band-card"
+        onmouseenter="playHover('groupe2')" 
+        onmouseleave="stopHover('groupe2')">
         <img src="image/groupe2.jpg" alt="Nobody's Straight">
         <h3>Nobody's Straight</h3>
         <p>20h50 — Hardcore</p>
     </a>
+<audio id="groupe2" src="audio/groupe2.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-3.com" target="_blank">
+    <a  class="band-card"
+        onmouseenter="playHover('groupe3')" 
+        onmouseleave="stopHover('groupe3')">
         <img src="image/groupe3.jpg" alt="Stoned">
         <h3>Stoned <br></h3>
         <p><br>22h10 — Metalcore</p>
     </a>
+<audio id="groupe3" src="audio/groupe3.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-4.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe4')" 
+        onmouseleave="stopHover('groupe4')">
         <img src="image/groupe4.jpg" alt="Francis Doomer">
         <h3>Francis Doomer</h3>
         <p>23h30 — Electro Punk</p>
     </a>
-
+<audio id="groupe4" src="audio/groupe4.mp3" preload="auto"></audio>
 </div>
 
 <div class="divider"></div>
@@ -75,41 +87,60 @@
 
 <div class="lineup-grid">
 
-    <a class="band-card" href="https://lien-groupe-5.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe5')" 
+        onmouseleave="stopHover('groupe5')">
         <img src="image/groupe5.jpg" alt="Manu">
         <h3>Manu</h3>
         <p>18h00 — Chanson à Texte</p>
     </a>
+    <audio id="groupe5" src="audio/groupe5.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-6.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe6')" 
+        onmouseleave="stopHover('groupe6')">
         <img src="image/groupe6.jpg" alt="BÏUR">
         <h3>BÏUR</h3>
         <p>19h30 — Metal Burlesque</p>
     </a>
+<audio id="groupe6" src="audio/groupe6.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-7.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe7')" 
+        onmouseleave="stopHover('groupe7')">
         <img src="image/groupe7.jpg" alt="Les Kroutes">
         <h3>Les Kroutes</h3>
         <p>21h00 — Punk à Roulettes</p>
     </a>
+<audio id="groupe7" src="audio/groupe7.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-8.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe8')" 
+        onmouseleave="stopHover('groupe8')">
         <img src="image/groupe8.jpg" alt="Alizarine">
         <h3>Alizarine</h3>
         <p>22h30 — Punk Rock</p>
     </a>
+    <audio id="groupe8" src="audio/groupe8.mp3" preload="auto"></audio>
 
-    <a class="band-card" href="https://lien-groupe-9.com" target="_blank">
+    <a class="band-card"
+        onmouseenter="playHover('groupe9')" 
+        onmouseleave="stopHover('groupe9')">
         <img src="image/groupe9.jpg" alt="Napnap">
         <h3>Return of Napnap</h3>
         <p>23h50 — DJ Set</p>
     </a>
-    <a class="band-card" href="https://lien-groupe-9.com" target="_blank">
+<audio id="groupe9" src="audio/groupe9.mp3" preload="auto"></audio>
+
+    <a class="band-card"
+        onmouseenter="playHover('groupe10')" 
+        onmouseleave="stopHover('groupe10')">
         <img src="image/groupe10.jpg" alt="Jeff Erson">
         <h3>La carte blanche de JeffErson</h3>
         <p>17h - 19h - 20h30 - 22h</p>
     </a>
 </div>
+<audio id="groupe10" src="audio/groupe10.mp3" preload="auto"></audio>
 
 <div class="divider"></div>
 
@@ -125,7 +156,7 @@ Naturellement, les horaires sont théoriques.
 <footer>
 © 2026 ALIZARINE
 </footer>
-
+<script src="js/script.js"></script>
 </div>
 </body>
 </html>

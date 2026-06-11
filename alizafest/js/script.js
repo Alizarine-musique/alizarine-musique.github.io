@@ -39,3 +39,55 @@ const observer = new IntersectionObserver(entries => {
 });
 
 counters.forEach(counter => observer.observe(counter));
+
+/*===============================================================
+Test============================================================*/
+const btn = document.getElementById("soundBtn");
+
+let isMuted = true;
+
+// bouton mute/unmute
+btn.addEventListener("click", () => {
+
+    isMuted = !isMuted;
+
+    document.querySelectorAll("audio").forEach(audio => {
+        audio.muted = isMuted;
+    });
+
+    btn.textContent = isMuted ? "🔇 Muet" : "🔊 Son";
+
+    if (isMuted) {
+        document.querySelectorAll("audio").forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    }
+});
+
+// hover play
+function playHover(id) {
+    if (isMuted) return; // 🔥 IMPORTANT
+
+    const audio = document.getElementById(id);
+    if (!audio) return;
+
+    // stop autres sons
+    document.querySelectorAll("audio").forEach(a => {
+        if (a.id !== id) {
+            a.pause();
+            a.currentTime = 0;
+        }
+    });
+
+    audio.currentTime = 0;
+    audio.play();
+}
+
+// hover stop
+function stopHover(id) {
+    const audio = document.getElementById(id);
+    if (!audio) return;
+
+    audio.pause();
+}
