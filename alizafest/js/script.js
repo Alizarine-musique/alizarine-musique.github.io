@@ -67,12 +67,19 @@ btn.addEventListener("click", () => {
 
 // hover play
 function playHover(id) {
-    if (isMuted) return; // 🔥 IMPORTANT
+
+    if (isMuted) return;
 
     const audio = document.getElementById(id);
+
     if (!audio) return;
 
-    // stop autres sons
+    // Charge le mp3 uniquement au premier survol
+    if (!audio.src) {
+        audio.src = "audio/" + id + ".mp3";
+    }
+
+    // Stop les autres sons
     document.querySelectorAll("audio").forEach(a => {
         if (a.id !== id) {
             a.pause();
@@ -86,7 +93,9 @@ function playHover(id) {
 
 // hover stop
 function stopHover(id) {
+
     const audio = document.getElementById(id);
+
     if (!audio) return;
 
     audio.pause();
