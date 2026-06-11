@@ -310,10 +310,10 @@ COMPTEURS
 
 #soundBtn{
     position:fixed;
-    bottom:20px;
-    left:20px;
+    top:20px;
+    right:20px;
     padding:10px 15px;
-    background:black;
+    background:rgba(75, 182, 4, 0.644);
     color:#ff0000;
     border:2px solid #29FF00;
     font-family:'Rock Salt', cursive;
@@ -325,5 +325,5 @@ COMPTEURS
 
 #soundBtn:hover{
     transform:scale(1.05);
-    box-shadow:0 0 25px rgba(41,255,0,0.6);
+    box-shadow:0 0 25px rgb(0, 255, 0);
 }
