@@ -1,127 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <script>
-if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    window.location.replace("valeurs.html");
-}
-</script>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aliza Fest</title>
-<link rel="icon" type="image/png" href="image/icon-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliza'Fest - Festival Punk & Hardcore en Normandie</title>
+    <meta name="description" content="Aliza'Fest est un festival punk et hardcore DIY organisé en Normandie par Alizarine.">
+    <meta name="keywords" content="Aliza Fest, Aliza'Fest, punk, hardcore, rock, Normandie, Alizarine">
+    <meta property="og:title" content="Aliza'Fest - Festival Punk & Hardcore">
+    <meta property="og:description" content="Festival punk et hardcore DIY en Normandie organisé par Alizarine.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://alizarine-musique.github.io/alizafest/">
+    <link rel="icon" type="image/png" href="image/icon-logo.png">
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: Arial;
+            height: 100vh;
+            max-height:900px ;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-<style>
-body{
-    margin:0;
-    background:black;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    font-family:Arial;
-}
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-/* CONTENEUR CENTRÉ */
-.video-wrapper{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-}
+        h1 {
+            color: #ff0000;
+            font-size: 2rem;
+            font-family: 'Rubik Glitch',cursive;
+            margin: 0;
+        }
 
-/* FULL SCREEN VIDEO */
-video{
-    width:80vw;
-    max-width:900px;
-    height:auto;
+        p {
+            max-width: 600px;
+            font-family: 'Rubik Glitch',cursive;
+            text-align: center;
+            margin: 0;
+            letter-spacing: 2px;
+        }
 
-    object-fit:cover;
-    cursor:pointer;
-    filter:contrast(1.2) saturate(1.2);
+        .video-wrapper {
+            width: 80vw;
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-}
-video:hover{
+        video {
+            height: 90%;
+            transition: 0.3s;
+        }
+
+        video:hover{
                         animation:glitch 0.15s infinite;
+                        border-radius: 100%;
                         filter:
                         drop-shadow(3px 0 #00fff2)
                         drop-shadow(-3px 0 #15ff00)
-                        drop-shadow(0 0 35px #15ff00);
+                        drop-shadow(0 0 10px #15ff00);
                         transform:scale(1.08);
                     }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px,2px); }
+            40% { transform: translate(3px,-2px); }
+            60% { transform: translate(-2px,-2px); }
+            80% { transform: translate(2px,2px); }
+            100% { transform: translate(0); }
+        }
 
-/* GLITCH */
-@keyframes glitch{
-    0%{transform:translate(0);}
-    20%{transform:translate(-3px,2px);}
-    40%{transform:translate(3px,-2px);}
-    60%{transform:translate(-2px,-2px);}
-    80%{transform:translate(2px,2px);}
-    100%{transform:translate(0);}
+        button {
+            align-content: center;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: black;
+            color: white;
+            border: 5px solid rgb(255, 0, 0);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            animation: glitch 0.15s infinite;
+            transform: scale(1.05);
+            filter:
+                drop-shadow(3px 0 #00fff2)
+                drop-shadow(-3px 0 #15ff00)
+                drop-shadow(0 0 35px #15ff00);
+        }
+        .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
 }
-
-/* BOUTON SON */
-button{
-    padding:10px 18px;
-    background:black;
-    color:white;
-    border:1px solid white;
-    cursor:pointer;
-    font-size:14px;
-    transition:0.2s;
-}
-
-button:hover{animation:glitch 0.15s infinite;
-                        filter:
-                        drop-shadow(3px 0 #00fff2)
-                        drop-shadow(-3px 0 #15ff00)
-                        drop-shadow(0 0 35px #15ff00);
-                        transform:scale(1.08);
-                    }
-</style>
+    </style>
 </head>
 
 <body>
-<div class="video-wrapper">
-    <video id="introVideo" autoplay playsinline>
-        <source src="image/teaser.mp4" type="video/mp4">
-    </video>
+
+<header>
+    <h1>ALIZA'FEST #4</h1>
+    <p>Festival punk, rock et hardcore DIY en Normandie.</p>
+</header>
+
+<main>
+
+    <div class="video-wrapper">
+        <video id="introVideo" autoplay playsinline>
+            <source src="image/teaser.mp4" type="video/mp4">
+        </video>
+    </div>
+
+<div class="button-wrapper">
     <button id="soundBtn">🔇 Muet</button>
 </div>
+
+</main>
 
 <script>
 const video = document.getElementById("introVideo");
 const btn = document.getElementById("soundBtn");
-/* IMPORTANT: activer le son après interaction */
+
 video.muted = false;
 
-/* clic => redirection */
+// clic vidéo -> page programmation
 video.addEventListener("click", () => {
     window.location.href = "programmation.html";
 });
 
-/* fin vidéo => redirection */
+// fin vidéo -> page programmation
 video.addEventListener("ended", () => {
     window.location.href = "programmation.html";
 });
 
-/* sécurité autoplay mobile */
+// autoplay safe mobile
 video.play().catch(() => {
     video.muted = true;
     video.play();
 });
+
+// bouton son
 btn.addEventListener("click", () => {
-
-    if (video.muted) {
-        video.muted = false;
-        btn.textContent = "🔊 Son";
-    } else {
-        video.muted = true;
-        btn.textContent = "🔇 Muet";
-    }
-
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? "🔇 Muet" : "🔊 Son";
 });
 </script>
 
