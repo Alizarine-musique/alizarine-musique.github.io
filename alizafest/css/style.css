@@ -46,43 +46,71 @@ header{
    align-items:center;
    justify-content:center;
    text-align:center;
-   margin-bottom:-40px;
+   margin-bottom:0px;
 }
 .main-logo{
     width:430px;
     max-width:100%;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 0px;
     opacity: 2;
     filter:
         drop-shadow(0 0 8px #ff0000)
         drop-shadow(0 0 18px #ff0000);
 }
+.background-video {
+  position: absolute;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  width:870px;
+  height: 250px;
+  margin-top: 0px;
+  object-fit: cover;
+  object-position: center 45%;
+  z-index: -1;
+  opacity: 0.5; /* option pour laisser lire le texte */
+  filter: saturate(1.8) contrast(1.5);
 
+}
 /* =========================
    NAVIGATION
 ========================= */
 nav{
-   position:relative;
+   position:sticky;
+   top:0px;
    display:flex;
    justify-content:center;
    flex-wrap:wrap;
-   gap:18px;
-   z-index:20;
+   margin-top: -2px;
+   margin-bottom: 0px;
+   gap:10px;
+   padding: 5px;
+   background-color: #1c0000;
+   border-radius: 10px 10px 0 0;
+   z-index:10;
+    border-top:2px solid#000000;
+   border-left: 2px solid#000000;
+   border-right: 2px solid#000000;
+   border-bottom: none;
 }
 nav a{
+  display: inline-block;
+  padding: 10px 20px;
+
    color:#00ff00;
    text-decoration:none;
    font-family:'ROCK SALT', cursive;
    font-size:1.1rem;
+
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.623);
    transition:0.2s;
 }
 nav a:hover{
-  text-transform: uppercase;
-  font-weight: bold;
   color: #FF0000;
   text-shadow:0 0 50px #00ff00;
 }
-
 /* =========================
    BIO  
     ========================*/
@@ -98,28 +126,21 @@ nav a:hover{
     justify-content: center;
     align-items: center;
 }
-.background-video {
-  position: absolute;
-  border: 2px solid #000000;
-  box-shadow:0 0 10px rgb(43, 255, 0);
-  width:900px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center 30%;
-  z-index: -1;
-  opacity: 0.5; /* option pour laisser lire le texte */
-  filter: saturate(1.8) contrast(1.5);
-}
 
 .box{
    width:100%;
    max-width:900px;
    margin:0 auto;
-   margin-top:15px;
+   margin-top:0px;
    padding:20px;
-   border:5px solid #000000;
+   border-top:none;
+   border-left: 2px solid#000000;
+   border-right: 2px solid#000000;
+   border-bottom: 2px solid#000000;
+   border-radius: 0 0 10px 10px;
    background:rgba(0, 0, 0, 0.623);
-   box-shadow:0 0 50px rgb(255, 0, 0);
+   box-shadow:
+    0px 0px 100px 10px rgb(255, 0, 0);
    overflow:hidden;
 }
 .box h1 {
@@ -128,7 +149,7 @@ nav a:hover{
   font-family: 'Rock Salt', cursive;
   text-decoration: underline;
   text-underline-offset: 6px;
-  margin-top: -20px;
+  margin-top: 0px;
   margin-bottom: 0px;
   font-size: 2rem;
 }
