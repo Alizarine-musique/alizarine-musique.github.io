@@ -126,7 +126,15 @@
 
     .mobile-logo {
         display: block;
-    }
+        height: auto;}
+    .mobile-logo:hover{
+            animation: glitch 0.15s infinite;
+            transform: scale(1.05);
+            filter:
+                drop-shadow(3px 0 #00fff2)
+                drop-shadow(-3px 0 #15ff00)
+                drop-shadow(0 0 35px #15ff00);
+}
     .mobile-logo-link{
         display:block;
     }
@@ -155,7 +163,6 @@
         muted 
         preload="none" 
         poster="image/logo.png">
-            <source src="image/teaser.mp4" type="video/mp4">
         </video>
     </div>
 
