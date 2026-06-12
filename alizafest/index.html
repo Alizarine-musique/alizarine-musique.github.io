@@ -112,6 +112,25 @@
     justify-content: center;
     margin-top: 0px;
 }
+.mobile-logo {
+        display: none;
+    }
+    .mobile-logo-link{
+        display:none;
+    }
+@media (max-width: 768px) {
+
+    .video-wrapper {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+    .mobile-logo-link{
+        display:block;
+    }
+}
     </style>
 </head>
 
@@ -124,13 +143,17 @@
 </header>
 
 <main>
-
+    <div>
+<a href="programmation.html" class="mobile-logo-link">
+    <img class="mobile-logo" src="image/logo.png" alt="Aliza Fest">
+</a>
+</div>
     <div class="video-wrapper">
         <video id="introVideo" 
         autoplay 
         playsinline 
         muted 
-        preload="metadata" 
+        preload="none" 
         poster="image/logo.png">
             <source src="image/teaser.mp4" type="video/mp4">
         </video>
@@ -143,31 +166,47 @@
 </main>
 
 <script>
-const video = document.getElementById("introVideo");
-const btn = document.getElementById("soundBtn");
+document.addEventListener("DOMContentLoaded", () => {
 
-video.muted = true;
+    const video = document.getElementById("introVideo");
+    const btn = document.getElementById("soundBtn");
 
-// clic vidéo -> page programmation
-video.addEventListener("click", () => {
-    window.location.href = "programmation.html";
-});
+    const isMobile = window.innerWidth <= 768;
 
-// fin vidéo -> page programmation
-video.addEventListener("ended", () => {
-    window.location.href = "programmation.html";
-});
+    // 🔥 empêcher chargement vidéo sur mobile
+    if (!isMobile && video) {
+        const source = document.createElement("source");
+        source.src = "image/teaser.mp4";
+        source.type = "video/mp4";
+        video.appendChild(source);
 
-// autoplay safe mobile
-video.play().catch(() => {
-    video.muted = true;
-    video.play();
-});
+        video.load();
+    }
 
-// bouton son
-btn.addEventListener("click", () => {
-    video.muted = !video.muted;
-    btn.textContent = video.muted ? "🔇 Muet" : "🔊 Son";
+    if (video) {
+        video.muted = true;
+
+        video.addEventListener("click", () => {
+            window.location.href = "programmation.html";
+        });
+
+        video.addEventListener("ended", () => {
+            window.location.href = "programmation.html";
+        });
+
+        video.play().catch(() => {
+            video.muted = true;
+            video.play();
+        });
+    }
+
+    if (btn && video) {
+        btn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            btn.textContent = video.muted ? "🔇 Muet" : "🔊 Son";
+        });
+    }
+
 });
 </script>
 
