@@ -100,3 +100,30 @@ function stopHover(id) {
 
     audio.pause();
 }
+
+//Menu déroulant
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".nav-links");
+
+  if (!toggle || !menu) return;
+
+  // ouvrir/fermer avec bouton
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("active");
+  });
+
+  // empêcher clic dans le menu de le fermer
+  menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // clic extérieur = fermeture
+  document.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
+
+});
