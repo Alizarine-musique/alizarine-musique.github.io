@@ -14,7 +14,6 @@ if (window.innerWidth <= 768) {
 }
 
 const counters = document.querySelectorAll('.counter');
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -41,16 +40,13 @@ const observer = new IntersectionObserver(entries => {
 counters.forEach(counter => observer.observe(counter));
 
 /*===============================================================
-Test============================================================*/
+Bouton Mute/Son============================================*/
 const btn = document.getElementById("soundBtn");
-
 let isMuted = true;
 
-// bouton mute/unmute
+if (btn) {
 btn.addEventListener("click", () => {
-
     isMuted = !isMuted;
-
     document.querySelectorAll("audio").forEach(audio => {
         audio.muted = isMuted;
     });
@@ -64,6 +60,7 @@ btn.addEventListener("click", () => {
         });
     }
 });
+}
 
 // hover play
 function playHover(id) {
