@@ -372,3 +372,22 @@ COMPTEURS / Billeterie
 }
 
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    padding: none;
+}
+
+.social-links a {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+     padding-left: 50px;
+     padding-right: 50px;
+     padding-bottom: none;
+     padding-top: none;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
