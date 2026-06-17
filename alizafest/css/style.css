@@ -303,7 +303,10 @@ COMPTEURS / Billeterie
     padding:30px 20px;
     color:rgba(255,255,255,0.5);
     font-size:0.8rem;
-    font-family:'IM Fell English SC', cursive;}
+    font-family:'Rock Salt', cursive;
+    max-width:900px;
+    margin:0 auto;
+ }
 /* =========================
    MOBILE
 ========================= */
