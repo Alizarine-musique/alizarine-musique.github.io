@@ -530,3 +530,19 @@ INDEX========================*/
   text-align:center;
   color:white;
 }
+.hero-center h1{
+    display:inline-block;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  transition:0.2s;
+  letter-spacing: 10px;
+  margin-bottom: -20px;
+}
+.hero-center h2{
+    display:inline-block;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  transition:0.2s;
+  letter-spacing: 10px;
+  font-size: medium;
+}

@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Aliza'Fest 2026</title>
-
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="image/icon-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <meta name="description" content="Aliza'Fest 2026 - Festival punk DIY en Normandie">
+  <link rel="apple-touch-icon" href="image/icon-logo.png">
+  <meta name="description" content="Aliza'Fest 2026 : festival punk, hardcore, rock alternatif et metal DIY au Fidelaire en Normandie. Prix libre, groupes indépendants, artisanat local et ambiance underground les 21 et 22 août 2026.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliza'Fest 21&22 août 2026 | Festival Punk Rock en Normandie</title>
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Aliza'Fest">
+    <meta property="og:url" content="https://alizarine-musique.github.io/alizafest/">
+    <meta property="og:title" content="Valeurs de l'Aliza'Fest">
+    <meta property="og:description" content="Festival punk DIY en Normandie : accessibilité, indépendance, respect et culture alternative.">
+    <meta property="og:image" content="https://alizarine-musique.github.io/alizafest/image/logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aliza'Fest 2026">
+    <meta name="twitter:description" content="Festival Punk DIY en Normandie">
+    <meta name="twitter:image" content="https://alizarine-musique.github.io/alizafest/image/logo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alizarine-musique.github.io/alizafest/">
+    <script type="application/ld+json">{ 
+      "@context": "https://schema.org",
+      "@type": "MusicFestival",
+      "name": "Aliza'Fest 2026",
+      "alternateName": "Aliza Fest",
+      "description": "Festival punk, hardcore et rock alternatif DIY en Normandie. Prix libre, scène indépendante, valeurs DIY et accessibles à tous.",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-22",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {"@type": "Place",
+                    "name": "Le Fidelaire",
+      "address": {"@type": "PostalAddress",
+      "addressLocality": "Le Fidelaire",
+      "addressRegion": "Normandie",
+      "addressCountry": "FR"}},
+      "image": ["https://alizarine-musique.github.io/alizafest/image/logo.png"],
+      "organizer": {"@type": "Organization","name": "Alizarine",
+      "url": "https://alizarine-musique.github.io/"},
+      "genre": ["Punk","Hardcore","Rock","Metal"],
+      "url": "https://alizarine-musique.github.io/alizafest",
+      "offers": {"@type": "Offer","price": "0","priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Festival à prix libre - soutien volontaire"}}
+    </script>
 </head>
 
-<body class="home">
+<body class="home" style="min-height: 100vh;">
 
 <div class="hero-home">
 
   <!-- IMAGE LCP (affichée immédiatement) -->
   <img 
     src="image/logo.png"
+    width="500"
+    height="500"
     alt="Aliza'Fest"
     class="hero-lcp"
     fetchpriority="high"
@@ -46,6 +84,10 @@
   
   <!-- CONTENU CENTRAL -->
   <div class="hero-center">
+    <h1>ALIZA'FEST</h1>
+        <br>
+    <h2>21&22 Août 2026</h2>
+    
     <div class="button-wrapper">
     <button id="soundBtn">🔇 Prêt à danser ?</button>
 </div>
@@ -53,15 +95,16 @@
     <!-- NAV “CHOIX” -->
     <div class="hero-menu">
         <br>
-        <a href="valeurs.html" class="hero-btn red">♢ Les valeurs</a>
-        <a href="billetterie.html" class="hero-btn green">★ La billetterie</a>
-        <a href="programmation.html" class="hero-btn red">▶ La prog'</a>
-        <a href="pratique.html" class="hero-btn green">📍 Les infos pratiques</a>
+        <a href="valeurs.html" class="hero-btn red" title="Découvre nos valeurs">♢ Les valeurs</a>
+        <a href="billetterie.html" class="hero-btn green" title="Découvre la billetterie">★ La billetterie</a>
+        <a href="programmation.html" class="hero-btn red" title="Découvre la programmation">▶ La prog'</a>
+        <a href="pratique.html" class="hero-btn green" title="Découvre les infos pratiques">📍 Les infos pratiques</a>
     </div>
+    <h2>Festival Punk Diy en Normandie</h2>
   </div>
+  
 </div>
 
-<script src="js/home.js">
-</script>
+<script src="js/home.js"></script>
 </body>
 </html>
