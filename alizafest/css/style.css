@@ -256,29 +256,44 @@ COMPTEURS / Billeterie
 .band-card p{font-size:0.9rem;
               color: #00ff00;
               align-items: flex-end;
-              opacity:0.8.}
+              opacity:0.8;}
 
 
 /*===================================================
 ========Bouton Prog'===============================*/
 #soundBtn{
-    position:sticky;
-    top:0;
-    bottom:20px;
-    right: 20px;
-    padding:10px 15px;
-    border-radius: 20px;
-    background:rgba(0, 0, 0, 0.623);
-    color:#ff0000;
-    border:2px solid #29FF00;
-    font-family:'Rock Salt', cursive;
-    cursor:pointer;
-    z-index:9999;
-    box-shadow:0 0 15px rgba(255,0,0,0.4);
-    transition:0.2s;}
+  position: relative;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: black;
+  color: #ff0000;
+  border: 2px solid #29FF00;
+  font-family: 'Rock Salt', cursive;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+  transition: 0.3s;
+}
+
 #soundBtn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px rgb(0, 255, 0);}
+                        animation:glitch 0.15s infinite;
+                        border-radius: 100%;
+                        background-color: #ffffff;
+                        filter:
+                        drop-shadow(3px 0 #66ff00)
+                        drop-shadow(-3px 0 #ff0000)
+                        drop-shadow(0 0 10px #ff0000);
+                        transform:scale(1.08);
+                    }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px,2px); }
+            40% { transform: translate(3px,-2px); }
+            60% { transform: translate(-2px,-2px); }
+            80% { transform: translate(2px,2px); }
+            100% { transform: translate(0); }
+        }
+
 
 /*======================================================
 ==================Google Maps==========================*/
@@ -406,4 +421,74 @@ COMPTEURS / Billeterie
     max-width:800px;
     border:2px solid #ff0000;
     box-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
+/*===============================
+INDEX========================*/
+.hero-home{
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero-center{
+  z-index:2;
+  color:white;
+}
+.hero-menu{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.hero-video{
+  position:absolute;
+  width: 900px;
+  height:100%;
+  object-fit:cover;
+  filter:contrast(1.2) saturate(1.3);
+  z-index:-2;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0, 0, 0, 0.37);
+  z-index:-1;
+}
+
+
+.hero-btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-family:'Rock Salt', cursive;
+  transition:0.2s;
+  border:2px solid;
+}
+
+.hero-btn.red{
+  color:#ff0000;
+  border-color:#00ff00;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #00FF00;
+}
+
+.hero-btn.green{
+  color:#00FF00;
+  border-color:#ff0000;
+  background-color: #000000;
+  box-shadow: 0 0 50px #FF0000;
+}
+
+.hero-btn.red:hover{
+  transform:scale(1.05);
+  background:black;
+}
+.hero-btn.green:hover{
+  transform:scale(1.05);
+  background:rgb(255, 255, 255);
 }
