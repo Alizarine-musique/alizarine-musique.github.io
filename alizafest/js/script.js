@@ -39,44 +39,27 @@ const observer = new IntersectionObserver(entries => {
 
 counters.forEach(counter => observer.observe(counter));
 
-/*===============================================================
-Bouton Mute/Son============================================*/
-const btn = document.getElementById("soundBtn");
-let isMuted = true;
 
-if (btn) {
-btn.addEventListener("click", () => {
-    isMuted = !isMuted;
-    document.querySelectorAll("audio").forEach(audio => {
-        audio.muted = isMuted;
-    });
 
-    btn.textContent = isMuted ? "🔇 Muet" : "🔊 Son";
-
-    if (isMuted) {
-        document.querySelectorAll("audio").forEach(audio => {
-            audio.pause();
-            audio.currentTime = 0;
-        });
-    }
-});
-}
-
-// hover play
-function playHover(id) {
-
-    if (isMuted) return;
+function toggleAudio(id) {
 
     const audio = document.getElementById(id);
 
     if (!audio) return;
 
-    // Charge le mp3 uniquement au premier survol
+    // Charge le mp3 seulement au premier clic
     if (!audio.src) {
         audio.src = "audio/" + id + ".mp3";
     }
 
-    // Stop les autres sons
+    // Si le son est déjà en lecture -> arrêt
+    if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+        return;
+    }
+
+    // Stop tous les autres sons
     document.querySelectorAll("audio").forEach(a => {
         if (a.id !== id) {
             a.pause();
@@ -86,16 +69,6 @@ function playHover(id) {
 
     audio.currentTime = 0;
     audio.play();
-}
-
-// hover stop
-function stopHover(id) {
-
-    const audio = document.getElementById(id);
-
-    if (!audio) return;
-
-    audio.pause();
 }
 
 //Menu déroulant
