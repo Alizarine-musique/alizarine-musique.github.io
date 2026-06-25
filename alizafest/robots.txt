@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alizarine-musique.github.io/alizafest/sitemap.xml
