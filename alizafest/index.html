@@ -52,58 +52,71 @@
 
 <body class="home">
 
-<div class="hero-home">
+<main class="hero-home">
 
-  <!-- IMAGE LCP (affichée immédiatement) -->
-  <img 
-    src="image/logo.png"
-    width="500"
-    height="500"
-    alt="Aliza'Fest"
-    class="hero-lcp"
-    fetchpriority="high"
-    decoding="async"
-  >
+    <!-- Arrière-plan -->
+    <video
+        class="hero-video"
+        id="introVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata">
+        <source src="image/teaser2.mp4" type="video/mp4">
+    </video>
 
-  <!-- VIDÉO (chargée en arrière-plan) -->
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="metadata"
-    class="hero-video"
-    id="introVideo"
-  >
-    <source src="image/teaser2.mp4" type="video/mp4">
-  </video>
+    <div class="hero-overlay"></div>
 
-  <!-- OVERLAY -->
-  <div class="hero-overlay"></div>
+    <!-- Logo -->
+    <img
+        src="image/logo.png"
+        width="500"
+        height="500"
+        alt="Logo Aliza'Fest"
+        class="hero-lcp"
+        fetchpriority="high">
 
-  
-  <!-- CONTENU CENTRAL -->
-  <div class="hero-center">
-    <h1>ALIZA'FEST</h1>
-    <h2>21&22 Août 2026</h2>
-    
-    <div class="button-wrapper">
-    <button id="soundBtn">🔇 Prêt à danser ?</button>
-</div>
+    <!-- Contenu -->
+    <section class="hero-center">
 
-    <!-- NAV “CHOIX” -->
-    <div class="hero-menu">
-        <br>
-        <a href="valeurs.html" class="hero-btn red" title="Découvre nos valeurs">♢ Les valeurs</a>
-        <a href="billetterie.html" class="hero-btn green" title="Découvre la billetterie">★ La billetterie</a>
-        <a href="programmation.html" class="hero-btn red" title="Découvre la programmation">▶ La prog'</a>
-        <a href="pratique.html" class="hero-btn green" title="Découvre les infos pratiques">📍 Les infos pratiques</a>
-    </div>
-    <h2>Festival Punk Diy en Normandie</h2>
-  </div>
-  
-</div>
+        <header class="hero-title">
+            <h1>ALIZA'FEST</h1>
+            <h2>21 & 22 août 2026</h2>
+        </header>
+
+        <button id="soundBtn">
+            🔇 Prêt à danser ?
+        </button>
+
+        <div class="hero-menu">
+            <a href="programmation.html" class="hero-btn red">
+                ▶ La prog'
+            </a>
+
+            <a href="billetterie.html" class="hero-btn green">
+                ★ Billetterie
+            </a>
+
+            <a href="valeurs.html" class="hero-btn red">
+                ♢ Les valeurs
+            </a>
+
+            <a href="pratique.html" class="hero-btn green">
+                📍 Infos pratiques
+            </a>
+
+        </div>
+
+        <h2 class="hero-tagline">
+            Festival Punk DIY en Normandie
+        </h2>
+
+    </section>
+
+</main>
 
 <script src="js/home.js"></script>
+
 </body>
 </html>

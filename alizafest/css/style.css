@@ -425,15 +425,74 @@ COMPTEURS / Billeterie
 
 /*===============================
 INDEX========================*/
+/* ==========================
+   PAGE D'ACCUEIL
+========================== */
+
 .hero-home{
-    min-height:100vh;
+    position:relative;
+    min-height:100dvh;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
-    position:relative;
     padding:20px;
+    overflow:hidden;
 }
+
+/* ==========================
+   VIDÉO
+========================== */
+
+.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:140%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+}
+
+/* ==========================
+   LOGO AU CHARGEMENT
+========================== */
+
+.hero-lcp{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:clamp(180px,25vw,350px);
+    height:auto;
+    z-index:5;
+    transition:opacity 1.2s ease;
+}
+
+.hero-video{
+    opacity:1;
+    transition:opacity 1.2s ease;
+}
+
+.hero-home.loaded .hero-lcp{
+    opacity:0;
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:2;
+}
+
+/* ==========================
+   CONTENU
+========================== */
+
 .hero-center{
     position:relative;
     z-index:10;
@@ -443,125 +502,105 @@ INDEX========================*/
     align-items:center;
     justify-content:center;
 
-    max-height:100vh;
+    text-align:center;
+    color:white;
+
+    width:min(90vw,450px);
 }
+
+/* ==========================
+   TITRES
+========================== */
+
+.hero-center h1{
+    margin:0;
+    font-family:'Rock Salt',cursive;
+    letter-spacing:8px;
+    font-size:x-large;
+
+}
+
+.hero-center h2{
+    margin:10px 0;
+    font-family:'Rock Salt',cursive;
+    letter-spacing:4px;
+    font-size:clamp(1rem,2vw,1.8rem);
+}
+
+/* ==========================
+   MENU
+========================== */
+
 .hero-menu{
-  display:flex;
+    display:flex;
     flex-direction:column;
+    gap:12px;
+    width:100%;
     margin:20px 0;
-    gap:10px;
-    width:min(90vw,420px);
+    
 }
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0, 0, 0, 0.37);
-  z-index:2;
-}
-
 
 .hero-btn{
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  font-family:'Rock Salt', cursive;
-  transition:0.2s;
-  border:2px solid;
+    display:block;
+    padding:12px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-family:'Rock Salt',cursive;
+    transition:.25s;
+    border:2px solid;
 }
 
 .hero-btn.red{
-  color:#ff0000;
-  border-color:#00ff00;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px #00FF00;
+    color:#ff0000;
+    border-color:#00ff00;
+    background:#fff;
+    box-shadow:0 0 20px #00ff00;
 }
 
 .hero-btn.green{
-  color:#00FF00;
-  border-color:#ff0000;
-  background-color: #000000;
-  box-shadow: 0 0 50px #FF0000;
+    color:#00ff00;
+    border-color:#ff0000;
+    background:#000;
+    box-shadow:0 0 20px #ff0000;
 }
 
-.hero-btn.red:hover{
-  transform:scale(1.05);
-  background:black;
-}
-.hero-btn.green:hover{
-  transform:scale(1.05);
-  background:rgb(255, 255, 255);
+.hero-btn:hover{
+    transform:scale(1.05);
 }
 
-/*===============================================================*/
-/* conteneur */
-.hero-home{
-    min-height:100dvh;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-evenly;
-    align-items:center;
-    overflow:hidden;
-    position:relative;
-    padding:20px;
-}
-.hero-video{
-  position: absolute;
-  
-  max-height: 100%;
-  width: 140%;
-  object-fit: cover;
-  z-index: 1;
-}
-.hero-lcp{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(180px, 28vw, 500px);
-  height: auto;
-  z-index: 5;
-}
+/* ==========================
+   PETITS ÉCRANS
+========================== */
 
+@media (max-height:750px){
 
-/* quand actif */
-.hero-lcp,
-.hero-video{
-  transition: opacity 1.2s ease;
-}
-.hero-home.loaded .hero-lcp{
-  opacity:0;
-}
-.hero-home.loaded .hero-video{
-  opacity:1;
-}
+    .hero-home{
+        padding:15px;
+    }
 
-/* contenu au-dessus */
-.hero-center{
-  position:relative;
-  z-index:10;
-  text-align:center;
-  color:white;
-  
-}
-.hero-center h1{
-    display:inline-block;
-  text-decoration:none;
-  font-family:'Rock Salt', cursive;
-  transition:0.2s;
-  letter-spacing: 10px;
-  margin-bottom: -20px;
-  font-size:clamp(2rem, 5vw, 4rem);
-    margin:0;
-}
-.hero-center h2{
-    display:inline-block;
-  text-decoration:none;
-  font-family:'Rock Salt', cursive;
-  transition:0.2s;
-  letter-spacing: 10px;
-  font-size: medium;
-  font-size:clamp(1rem, 2vw, 2rem);
-  margin:8px 0;
+    .hero-lcp{
+        width:180px;
+    }
+
+    .hero-center h1{
+        font-size:2rem;
+        letter-spacing:4px;
+    }
+
+    .hero-center h2{
+        font-size:1rem;
+        margin:6px 0;
+    }
+
+    .hero-menu{
+        gap:8px;
+        margin:12px 0;
+    }
+
+    .hero-btn,
+    #soundBtn{
+        padding:8px 14px;
+        font-size:.85rem;
+    }
+
 }
