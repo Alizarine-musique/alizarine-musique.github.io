@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="image/icon-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <meta name="description" content="Aliza'Fest 2026 - Festival punk DIY en Normandie">
 </head>
@@ -15,14 +17,33 @@
 <body class="home">
 
 <div class="hero-home">
-<style>
-</style>
+
+  <!-- IMAGE LCP (affichée immédiatement) -->
+  <img 
+    src="image/logo.png"
+    alt="Aliza'Fest"
+    class="hero-lcp"
+    fetchpriority="high"
+    decoding="async"
+  >
+
+  <!-- VIDÉO (chargée en arrière-plan) -->
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="metadata"
+    class="hero-video"
+    id="introVideo"
+  >
+    <source src="image/teaser2.mp4" type="video/mp4">
+  </video>
+
+  <!-- OVERLAY -->
+  <div class="hero-overlay"></div>
 
   
-  <video autoplay muted loop playsinline class="hero-video" id="introVideo">
-    <source src="image/teaser.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
   <!-- CONTENU CENTRAL -->
   <div class="hero-center">
     <div class="button-wrapper">
@@ -32,25 +53,12 @@
     <!-- NAV “CHOIX” -->
     <div class="hero-menu">
         <br>
-        <a href="valeurs.html" class="hero-btn red">
-       ♢ Les valeurs
-      </a>
-      <a href="billetterie.html" class="hero-btn green">
-        ★ La billetterie
-      </a>
-
-      <a href="programmation.html" class="hero-btn red">
-        ▶ La prog'
-      </a>
-      <a href="pratique.html" class="hero-btn green">
-        📍 Les infos pratiques
-      </a>
-
+        <a href="valeurs.html" class="hero-btn red">♢ Les valeurs</a>
+        <a href="billetterie.html" class="hero-btn green">★ La billetterie</a>
+        <a href="programmation.html" class="hero-btn red">▶ La prog'</a>
+        <a href="pratique.html" class="hero-btn green">📍 Les infos pratiques</a>
     </div>
-    
-
   </div>
-
 </div>
 
 <script src="js/home.js">

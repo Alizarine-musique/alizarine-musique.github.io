@@ -22,3 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const hero = document.querySelector(".hero-home");
+  const video = document.getElementById("introVideo");
+
+  // sécurité
+  if (!hero || !video) return;
+
+  // pré-chargement vidéo
+  video.load();
+
+  // quand la vidéo est prête → fade transition
+  video.addEventListener("canplay", () => {
+
+    setTimeout(() => {
+      hero.classList.add("loaded");
+    }, 600); // petit délai pour effet ciné
+
+  });
+
+});
