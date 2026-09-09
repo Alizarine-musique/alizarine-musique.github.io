@@ -423,6 +423,13 @@ COMPTEURS / Billeterie
     box-shadow:0 0 20px rgba(255,0,0,0.4);
 }
 
+.video-container iframe {
+    width: 100%;
+    max-width: 800px;
+    border:2px solid #ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
 /*===============================
 INDEX========================*/
 /* ==========================
