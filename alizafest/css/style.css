@@ -49,7 +49,7 @@ header{
    text-align:center;
    position: relative;}
 .main-logo{
-    width:430px;
+    width:200px;
     max-width:100%;
     margin-top: 10px;
     margin-bottom: 0px;
@@ -329,7 +329,7 @@ COMPTEURS / Billeterie
     header{
         padding:15px;}
     .main-logo{
-        width:350px;
+        width:200px;
         margin-top: 0;
         margin-bottom: -25px;}   
     .box{
@@ -456,7 +456,7 @@ INDEX========================*/
     left:50%;
     transform:translate(-50%,-50%);
     width:140%;
-    height:100%;
+    height:130%;
     object-fit:cover;
     z-index:1;
 }
@@ -522,18 +522,45 @@ INDEX========================*/
 .hero-center h1{
     margin:0;
     font-family:'Rock Salt',cursive;
+    text-shadow:0 0 10px #ff0000,0 0 20px #00ff00;
     letter-spacing:8px;
     font-size:x-large;
+    color:#FF0000;
 
 }
 
 .hero-center h2{
-    margin:10px 0;
+    margin:0px 0;
     font-family:'Rock Salt',cursive;
+    text-shadow:0 0 10px #000000,0 0 20px #ff0000;
     letter-spacing:4px;
     font-size:clamp(1rem,2vw,1.8rem);
+    color:#000000;
 }
+.hero-center h3{
+    margin:0px 0;
+    font-family:'Rock Salt',cursive;
+    text-shadow:0 0 10px #ff0000,0 0 20px #00ff00;
+    letter-spacing:0px;
+    font-size:large;
+    color:#ffffff;
 
+}
+.hero-center h6{
+    margin:0px 0;
+    letter-spacing:0px;
+    font-size:small;
+    color:#000000;
+
+}
+.hero-logo{
+    width:300px;
+    height:auto;
+    margin-bottom:-10px;
+    filter:drop-shadow(0 0 10px #ff0000)
+           drop-shadow(0 0 20px #00ff00);
+    z-index:-5;
+}
 /* ==========================
    MENU
 ========================== */
@@ -543,7 +570,7 @@ INDEX========================*/
     flex-direction:column;
     gap:12px;
     width:100%;
-    margin:20px 0;
+    margin:0px 0;
     
 }
 
@@ -580,34 +607,259 @@ INDEX========================*/
 ========================== */
 
 @media (max-height:750px){
-
-    .hero-home{
-        padding:15px;
-    }
-
-    .hero-lcp{
-        width:180px;
-    }
-
+    .hero-home{padding:15px;}
+    .hero-lcp{width:180px;}
     .hero-center h1{
         font-size:2rem;
         letter-spacing:4px;
     }
-
     .hero-center h2{
         font-size:1rem;
         margin:6px 0;
     }
-
     .hero-menu{
         gap:8px;
         margin:12px 0;
     }
-
     .hero-btn,
     #soundBtn{
         padding:8px 14px;
         font-size:.85rem;
     }
 
+}
+
+/* =========================================================
+   GALERIE PHOTOS - ALIZA'FEST
+========================================================= */
+.photo-wall {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+/* =========================================================
+   CASE PHOTO
+========================================================= */
+
+.photo-item {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 2px solid #29FF00;
+    box-shadow:0 0 12px rgba(255, 0, 0, 0.4);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter:
+        contrast(1.15)
+        saturate(1.15);
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+/* =========================================================
+   SURVOL
+========================================================= */
+
+.photo-item:hover {
+    transform: scale(1.03);
+    z-index: 5;
+    box-shadow:
+        0 0 15px #ff0000,
+        0 0 30px rgba(41, 255, 0, 0.5);
+}
+.photo-item:hover img {
+    transform: scale(1.06);
+    filter:
+        contrast(1)
+        saturate(1.4);
+}
+/* =========================================================
+   CHARGEMENT
+========================================================= */
+.photos-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 10px;
+    color: #29FF00;
+    font-family: 'Rock Salt', cursive;
+}
+/* =========================================================
+   ERREUR
+========================================================= */
+.photos-error {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ff0000;
+    font-size: 0.8rem;
+    padding: 10px;
+    background: #000;
+    box-sizing: border-box;
+}
+.photos-error small {
+    color: #777;
+    margin-top: 5px;
+    word-break: break-all;
+}
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+.photo-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+.lightbox-content {
+    width: 80vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 2px solid #29FF00;
+    box-shadow:
+        0 0 20px #ff0000,
+        0 0 40px rgba(41, 255, 0, 0.4);
+}
+/* =========================================================
+   FERMER
+========================================================= */
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    z-index: 100000;
+    border: none;
+    background: transparent;
+    color: #29FF00;
+    font-size: 50px;
+    line-height: 1;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+.lightbox-close:hover {
+    color: #ff0000;
+    transform: scale(1.15);
+}
+/* =========================================================
+   BOUTONS PRECEDENT / SUIVANT
+========================================================= */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100000;
+    border: none;
+    background: transparent;
+    color: #29FF00;
+    font-size: 70px;
+    line-height: 1;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.lightbox-nav:hover {
+    color: #ff0000;
+}
+.lightbox-prev {
+    left: 5px;
+}
+.lightbox-next {
+    right: 5px;
+}
+/* =========================================================
+   COMPTEUR
+========================================================= */
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #29FF00;
+    font-family: 'Rock Salt', cursive;
+    font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+    .photo-wall {
+        grid-template-columns: repeat(2
+        , 1fr);
+        gap: 8px;
+    }
+    .photo-item:hover {
+        transform: none;
+    }
+    .lightbox-content {
+        width: 90vw;
+        height: 80vh;
+    }
+    .lightbox-nav {
+        font-size: 50px;
+        padding: 10px;
+    }
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .photo-wall {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 6px;
+    }
+    .lightbox-content {
+        width: 95vw;
+        height: 75vh;
+    }
 }
